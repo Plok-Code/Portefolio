@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idris NAULLEAU-AURIAL - Profil</title>
+  <script>
+    document.documentElement.classList.add('js');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="playlist.js" defer></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">Idris NAULLEAU-AURIAL</div>
+      <nav aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="profil.html" aria-current="page">Profil</a>
+        <a href="projets.html">Projets</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions" aria-label="Liens rapides">
+        <a class="btn secondary btn--sm btn--icon" href="https://www.linkedin.com/in/idris-naulleau-aurial-9278b711b/"
+          target="_blank" rel="noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+            <path d="M8 11v5"></path>
+            <path d="M8 8v.01"></path>
+            <path d="M12 16v-5"></path>
+            <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+        <div class="cv-downloads" aria-label="T&eacute;l&eacute;chargements CV">
+          <details>
+            <summary class="btn secondary btn--sm">Mon CV</summary>
+            <div class="cv-downloads__links">
+              <a class="btn primary btn--sm" href="assets/documents/Papier CV DE alternance.pdf" target="_blank"
+                rel="noreferrer">Version &agrave; imprimer</a>
+              <a class="btn primary btn--sm" href="assets/documents/Mail CV DE alternance.pdf" target="_blank"
+                rel="noreferrer">Version num&eacute;rique</a>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="breadcrumbs" aria-label="Fil d’Ariane">
+        <div class="breadcrumbs__trail">
+          <a href="index.html">Accueil</a>
+          <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+          <span aria-current="page">Profil</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="card reveal reveal-on-load">
+        <h1>Profil</h1>
+      </section>
+
+      <section class="section">
+        <div class="card reveal">
+          <h2>Parcours</h2>
+
+          <div class="card-deck" data-card-deck>
+            <div class="card-deck__grid">
+              <button class="deck-card" type="button" data-deck-card data-card-key="etudes"
+                data-card-title="&Eacute;tudes initiales" aria-controls="deck-parcours" aria-expanded="false">
+                <span class="deck-card__inner">
+                  <span class="deck-card__face deck-card__front">
+                    <img class="deck-card__media" src="assets/cards/formationinitial.png" alt="&Eacute;tudes initiales"
+                      loading="lazy">
+                  </span>
+                  <span class="deck-card__face deck-card__back" aria-hidden="true">
+                    <img class="deck-card__media deck-card__media--back" src="assets/cards/formationinitial.png" alt=""
+                      loading="lazy">
+                  </span>
+                </span>
+              </button>
+
+              <button class="deck-card" type="button" data-deck-card data-card-key="debut-voie-pro"
+                data-card-title="D&eacute;but de la voie professionnelle" aria-controls="deck-parcours"
+                aria-expanded="false">
+                <span class="deck-card__inner">
+                  <span class="deck-card__face deck-card__front">
+                    <img class="deck-card__media" src="assets/cards/debutcarrierre.jpg"
+                      alt="D&eacute;but de la voie professionnelle" loading="lazy">
+                  </span>
+                  <span class="deck-card__face deck-card__back" aria-hidden="true">
+                    <img class="deck-card__media deck-card__media--back" src="assets/cards/debutcarrierre.jpg" alt=""
+                      loading="lazy">
+                  </span>
+                </span>
+              </button>
+
+              <button class="deck-card" type="button" data-deck-card data-card-key="moi-et-informatique"
+                data-card-title="Moi &amp; l'informatique" aria-controls="deck-parcours" aria-expanded="false">
+                <span class="deck-card__inner">
+                  <span class="deck-card__face deck-card__front">
+                    <img class="deck-card__media" src="assets/cards/informatique.png" alt="Moi &amp; l'informatique"
+                      loading="lazy">
+                  </span>
+                  <span class="deck-card__face deck-card__back" aria-hidden="true">
+                    <img class="deck-card__media deck-card__media--back" src="assets/cards/informatique.png" alt=""
+                      loading="lazy">
+                  </span>
+                </span>
+              </button>
+
+              <button class="deck-card" type="button" data-deck-card data-card-key="vers-data-engineer"
+                data-card-title="Vers le m&eacute;tier Data Engineer" aria-controls="deck-parcours"
+                aria-expanded="false">
+                <span class="deck-card__inner">
+                  <span class="deck-card__face deck-card__front">
+                    <img class="deck-card__media" src="assets/cards/dataengineer.jpg"
+                      alt="Vers le m&eacute;tier Data Engineer" loading="lazy">
+                  </span>
+                  <span class="deck-card__face deck-card__back" aria-hidden="true">
+                    <img class="deck-card__media deck-card__media--back" src="assets/cards/dataengineer.jpg" alt=""
+                      loading="lazy">
+                  </span>
+                </span>
+              </button>
+            </div>
+
+            <template data-card-template="etudes">
+              <p>
+                Mes &eacute;tudes initiales m&rsquo;ont appris un r&eacute;flexe que je garde encore aujourd&rsquo;hui :
+                comprendre le &quot;pourquoi&quot; avant de foncer sur le &quot;comment&quot;.
+              </p>
+              <div class="mini-timeline" aria-label="Parcours scolaire r&eacute;sum&eacute;">
+                <span class="mini-timeline__step">BEP / BAC PRO</span>
+                <span class="mini-timeline__sep" aria-hidden="true">&rarr;</span>
+                <span class="mini-timeline__step is-canceled" title="Arr&ecirc;t avant la fin">BTS SIO</span>
+                <span class="mini-timeline__sep" aria-hidden="true">&rarr;</span>
+                <span class="mini-timeline__step">March&eacute; du travail</span>
+              </div>
+              <p>
+                J&rsquo;ai commenc&eacute; par l&rsquo;&eacute;lectronique avec un <strong>BEP et un BAC PRO
+                  Syst&egrave;mes
+                  &eacute;lectroniques industriels et domestiques</strong>. C&rsquo;est l&agrave; que j&rsquo;ai appris
+                la
+                rigueur, le diagnostic et l&rsquo;approche syst&eacute;mique.
+              </p>
+              <p>
+                Voulant me tourner vers la programmation, j&rsquo;ai ensuite int&eacute;gr&eacute; un <strong>BTS
+                  SIO</strong>.
+                Malgr&eacute; de bons r&eacute;sultats, l&rsquo;acc&egrave;s &agrave; l&rsquo;option
+                d&eacute;veloppement
+                m&rsquo;a &eacute;t&eacute; refus&eacute; &agrave; cause d&rsquo;une courte absence.
+              </p>
+              <p>
+                J&rsquo;ai d&eacute;cid&eacute; de ne pas perdre deux ans dans une fili&egrave;re qui
+                n&rsquo;&eacute;tait pas
+                mon choix. J&rsquo;ai quitt&eacute; le BTS pour apprendre par moi-m&ecirc;me et entrer directement sur
+                le
+                march&eacute; du travail.
+              </p>
+              <p>
+                De cette p&eacute;riode, je garde une grande rigueur m&eacute;thodique, un pragmatisme dans la prise de
+                d&eacute;cision et une forte capacit&eacute; d'autonomie et d'adaptation sur le terrain.
+              </p>
+            </template>
+
+            <template data-card-template="debut-voie-pro">
+              <p>
+                Apr&egrave;s le BTS, il fallait subvenir &agrave; mes besoins. Faute d'opportunit&eacute;s en
+                informatique dans
+                ma petite ville, j'ai pris des emplois alimentaires, notamment en restauration.
+              </p>
+              <p>
+                En parall&egrave;le, je me formais en autodidacte au <strong>d&eacute;veloppement front-end</strong>. En
+                <strong>2015</strong>, j'ai cliqu&eacute; mon activit&eacute; freelance &agrave; plein temps sur la
+                c&ocirc;te,
+                &agrave; Lacanau Oc&eacute;an. Je r&eacute;alisais de petits sites vitrines, du d&eacute;pannage
+                hardware et de
+                la formation informatique.
+              </p>
+              <p>
+                L'&eacute;t&eacute;, je compl&eacute;tais cette activit&eacute; en &eacute;tant <strong>responsable de
+                  s&eacute;jours adapt&eacute;s</strong> pour personnes en situation de handicap (organisation, gestion
+                d'&eacute;quipe et prise de d&eacute;cision).
+              </p>
+              <figure class="cv-preview">
+                <img src="assets/anciencv.png"
+                  alt="Ancien CV (p&eacute;riode animation, graphisme et d&eacute;buts en freelance)" loading="lazy">
+                <figcaption>
+                  Ancien CV (rep&egrave;re visuel de cette p&eacute;riode polyvalente).
+                </figcaption>
+              </figure>
+              <p>
+                De retour dans le B&eacute;arn, j'ai approfondi mes comp&eacute;tences en <strong>UI/UX Design</strong>
+                pour
+                compl&eacute;ter mon profil.
+              </p>
+              <p>
+                Pour gagner en stabilit&eacute;, j'ai ensuite pris un CDI de r&eacute;ceptionniste de nuit en
+                h&ocirc;tellerie
+                pendant <strong>5 ans</strong>. C&rsquo;est cette stabilit&eacute; qui m&rsquo;a permis
+                d&rsquo;enclencher un
+                <strong>Projet de Transition Professionnelle (PTP)</strong>, pour me recentrer d&eacute;finitivement
+                vers les
+                <strong>m&eacute;tiers de la Data</strong>.
+              </p>
+            </template>
+
+            <template data-card-template="moi-et-informatique">
+              <p>
+                J&rsquo;ai commenc&eacute; &agrave; c&ocirc;toyer l&rsquo;informatique &agrave; l&rsquo;&eacute;poque de
+                <strong>Windows 98</strong>. En 6e, une initiation au <strong>HTML</strong> m'a fait r&eacute;aliser
+                avec
+                fascination qu'avec quelques lignes, je pouvais cr&eacute;er r&eacute;ellement quelque chose. J'ai par
+                la suite
+                rejoint le <strong>club informatique</strong> du coll&egrave;ge pour construire des robots.
+              </p>
+              <p>
+                Avec le temps, j&rsquo;ai compris ce qui m'attirait le plus : <strong>transformer une id&eacute;e en
+                  solution</strong>. L'informatique n'est pas une fin en soi, c&rsquo;est un outil pour rendre une
+                situation
+                plus claire, plus fiable ou plus simple &agrave; utiliser.
+              </p>
+              <p>
+                D&egrave;s que je veux <strong>prototyper</strong>, <strong>automatiser</strong>,
+                <strong>am&eacute;liorer</strong> ou <strong>structurer</strong>, je reviens naturellement vers le code.
+              </p>
+            </template>
+
+            <template data-card-template="vers-data-engineer">
+              <p>
+                J&rsquo;ai choisi de viser le m&eacute;tier de <strong>Data Engineer</strong> car il correspond
+                parfaitement
+                &agrave; ma fa&ccedil;on de travailler : <strong>penser en syst&egrave;mes</strong>,
+                <strong>fiabiliser</strong>
+                et <strong>automatiser</strong>. C'est le m&eacute;tier qui permet de faire circuler la donn&eacute;e
+                proprement
+                et de construire des bases solides.
+              </p>
+              <p>
+                Ce r&ocirc;le &eacute;tant souvent accessible &agrave; niveau Master (Bac+5) avec de forts
+                d&eacute;bouch&eacute;s sur le march&eacute; de la Data, j'ai construit ma trajectoire en deux
+                &eacute;tapes
+                pour pallier le manque d'&eacute;quivalent Bac+3 requis au d&eacute;part :
+              </p>
+              <ul>
+                <li><strong>&Eacute;tape 1 : Data Analyst</strong> via une formation &agrave; la Wild Code School pour
+                  consolider
+                  les fondamentaux (SQL, m&eacute;triques, restitution).</li>
+                <li><strong>&Eacute;tape 2 : Data Engineer</strong> en contrat de professionnalisation (3 semaines en
+                  entreprise
+                  / 1 semaine en &eacute;cole) sur 18 mois, pour industrialiser ces bases.</li>
+              </ul>
+            </template>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card reveal">
+          <h2>Projets &amp; avenir</h2>
+
+          <div class="card-deck" data-card-deck>
+            <div class="card-deck__grid">
+              <button class="deck-card" type="button" data-deck-card data-card-key="contrat"
+                data-card-title="Ce que j'attends du contrat pro" aria-controls="deck-avenir" aria-expanded="false">
+                <span class="deck-card__inner">
+                  <span class="deck-card__face deck-card__front">
+                    <img class="deck-card__media" src="assets/cards/cequejattend.jpg"
+                      alt="Ce que j'attends du contrat pro" loading="lazy">
+                  </span>
+                  <span class="deck-card__face deck-card__back" aria-hidden="true">
+                    <img class="deck-card__media deck-card__media--back" src="assets/cards/cequejattend.jpg" alt=""
+                      loading="lazy">
+                  </span>
+                </span>
+              </button>
+
+              <button class="deck-card" type="button" data-deck-card data-card-key="entreprendre"
+                data-card-title="Entrepreneuriat" aria-controls="deck-avenir" aria-expanded="false">
+                <span class="deck-card__inner">
+                  <span class="deck-card__face deck-card__front">
+                    <img class="deck-card__media" src="assets/cards/entreprenariat.png" alt="Entrepreneuriat"
+                      loading="lazy">
+                  </span>
+                  <span class="deck-card__face deck-card__back" aria-hidden="true">
+                    <img class="deck-card__media deck-card__media--back" src="assets/cards/entreprenariat.png" alt=""
+                      loading="lazy">
+                  </span>
+                </span>
+              </button>
+
+              <button class="deck-card" type="button" data-deck-card data-card-key="vision"
+                data-card-title="Vision de l'avenir" aria-controls="deck-avenir" aria-expanded="false">
+                <span class="deck-card__inner">
+                  <span class="deck-card__face deck-card__front">
+                    <img class="deck-card__media" src="assets/cards/avenir.jpg" alt="Vision de l'avenir" loading="lazy">
+                  </span>
+                  <span class="deck-card__face deck-card__back" aria-hidden="true">
+                    <img class="deck-card__media deck-card__media--back" src="assets/cards/avenir.jpg" alt=""
+                      loading="lazy">
+                  </span>
+                </span>
+              </button>
+            </div>
+
+            <template data-card-template="contrat">
+              <p>Dans mon <strong>contrat pro Data Engineer</strong>, je cherche &agrave; <strong>progresser</strong>
+                tout en
+                produisant du r&eacute;sultat concret. Je cherche un cadre pour <strong>apprendre</strong> et
+                <strong>m'am&eacute;liorer en continu</strong>.
+              </p>
+              <p>Concr&egrave;tement, j'attends :</p>
+              <ul>
+                <li><strong>Un environnement sain</strong> : communication respectueuse et ouverte, feedbacks
+                  constructifs,
+                  entraide.</li>
+                <li><strong>Des missions vari&eacute;es</strong> pour &eacute;viter la monotonie.</li>
+                <li><strong>Un vrai accompagnement</strong> : mentorat, revues de code et points d'&eacute;tape
+                  r&eacute;guliers.</li>
+                <li><strong>La possibilit&eacute; de proposer des id&eacute;es</strong> pour participer &agrave;
+                  l'am&eacute;lioration des process.</li>
+              </ul>
+            </template>
+
+            <template data-card-template="entreprendre">
+              <p>J&rsquo;ai une tendance naturelle &agrave; imaginer des id&eacute;es et &agrave; vouloir les
+                concr&eacute;tiser.
+                Ce qui m'attire dans la cr&eacute;ation de projets, c'est la possibilit&eacute; de <strong>transformer
+                  une
+                  id&eacute;e en quelque chose d'utile</strong> et de la confronter au r&eacute;el.</p>
+              <p>C'est aussi ce qui m'oblige &agrave; <strong>sortir de ma bulle technique</strong> pour comprendre le
+                besoin de
+                l'utilisateur final, les choix de design, ou m&ecirc;me des notions de base de marketing.</p>
+              <p>J'ai d&eacute;j&agrave; connu le <strong>freelance</strong> par le pass&eacute;, avec ses hauts et ses
+                bas.
+                Aujourd'hui, mon choix d'un contrat pro est l&agrave; pour me construire une trajectoire solide de
+                mani&egrave;re
+                sereine, tout en gardant mes projets personnels en parall&egrave;le.</p>
+            </template>
+
+            <template data-card-template="vision">
+              <p>Ma vision &agrave; long terme s'articule autour de la <strong>libert&eacute;
+                  g&eacute;ographique</strong>. J'ai
+                un fort besoin de mobilit&eacute; et j'appr&eacute;cie l'ind&eacute;pendance pragmatique. Je
+                privil&eacute;gie
+                donc les organisations r&eacute;fl&eacute;chies avec du <strong>t&eacute;l&eacute;travail
+                  complet</strong> sur
+                le long terme.</p>
+              <p>Je suis orient&eacute; <strong>croissance et am&eacute;lioration</strong> : quand un projet ou un outil
+                fonctionne, je pr&eacute;f&egrave;re me d&eacute;gager du temps pour m'attaquer &agrave; d'autres
+                d&eacute;fis
+                que de me contenter d'une simple maintenance endormie.</p>
+              <p>Je peux tout &agrave; fait m'inscrire dans un <strong>CDI</strong> durablement, si le management est
+                moderne,
+                plut&ocirc;t horizontal, et qu'il r&eacute;compense l'<strong>impact r&eacute;el
+                  concr&eacute;tis&eacute;</strong> plut&ocirc;t que la politique d'entreprise.</p>
+              <p>Mon cap reste donc le m&ecirc;me : <strong>construire utile</strong>, grandir en comp&eacute;tence, et
+                apporter
+                des r&eacute;sultats tangibles dans un cadre de confiance.</p>
+            </template>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card reveal">
+          <h2>Passions</h2>
+
+          <div class="card-deck" data-card-deck>
+            <div class="card-deck__grid">
+              <button class="deck-card" type="button" data-deck-card data-card-key="echecs"
+                data-card-title="Jeux d'&eacute;checs" aria-controls="deck-passions" aria-expanded="false">
+                <span class="deck-card__inner">
+                  <span class="deck-card__face deck-card__front">
+                    <img class="deck-card__media" src="assets/cards/echecs.png" alt="Jeux d'&eacute;checs"
+                      loading="lazy">
+                  </span>
+                  <span class="deck-card__face deck-card__back" aria-hidden="true">
+                    <img class="deck-card__media deck-card__media--back" src="assets/cards/echecs.png" alt=""
+                      loading="lazy">
+                  </span>
+                </span>
+              </button>
+
+              <button class="deck-card" type="button" data-deck-card data-card-key="sport" data-card-title="Sport"
+                aria-controls="deck-passions" aria-expanded="false">
+                <span class="deck-card__inner">
+                  <span class="deck-card__face deck-card__front">
+                    <img class="deck-card__media" src="assets/cards/sport.png" alt="Sport" loading="lazy">
+                  </span>
+                  <span class="deck-card__face deck-card__back" aria-hidden="true">
+                    <img class="deck-card__media deck-card__media--back" src="assets/cards/sport.png" alt=""
+                      loading="lazy">
+                  </span>
+                </span>
+              </button>
+
+              <button class="deck-card" type="button" data-deck-card data-card-key="audiovisuel"
+                data-card-title="Cr&eacute;ation audiovisuelle" aria-controls="deck-passions" aria-expanded="false">
+                <span class="deck-card__inner">
+                  <span class="deck-card__face deck-card__front">
+                    <img class="deck-card__media" src="assets/cards/audiovisuel.png" alt="Cr&eacute;ation audiovisuelle"
+                      loading="lazy">
+                  </span>
+                  <span class="deck-card__face deck-card__back" aria-hidden="true">
+                    <img class="deck-card__media deck-card__media--back" src="assets/cards/audiovisuel.png" alt=""
+                      loading="lazy">
+                  </span>
+                </span>
+              </button>
+
+              <button class="deck-card" type="button" data-deck-card data-card-key="jeux"
+                data-card-title="Cr&eacute;ation de jeux vid&eacute;o" aria-controls="deck-passions"
+                aria-expanded="false">
+                <span class="deck-card__inner">
+                  <span class="deck-card__face deck-card__front">
+                    <img class="deck-card__media" src="assets/cards/jeuxvideos.jpg"
+                      alt="Cr&eacute;ation de jeux vid&eacute;o" loading="lazy">
+                  </span>
+                  <span class="deck-card__face deck-card__back" aria-hidden="true">
+                    <img class="deck-card__media deck-card__media--back" src="assets/cards/jeuxvideos.jpg" alt=""
+                      loading="lazy">
+                  </span>
+                </span>
+              </button>
+
+              <button class="deck-card" type="button" data-deck-card data-card-key="musique"
+                data-card-title="Composition musicale" aria-controls="deck-passions" aria-expanded="false">
+                <span class="deck-card__inner">
+                  <span class="deck-card__face deck-card__front">
+                    <img class="deck-card__media" src="assets/cards/musique.jpg" alt="Composition musicale"
+                      loading="lazy">
+                  </span>
+                  <span class="deck-card__face deck-card__back" aria-hidden="true">
+                    <img class="deck-card__media deck-card__media--back" src="assets/cards/musique.jpg" alt=""
+                      loading="lazy">
+                  </span>
+                </span>
+              </button>
+            </div>
+
+            <template data-card-template="echecs">
+              <p>Je me suis mis aux <strong>&eacute;checs</strong> sur le tard. J'ai jou&eacute; en club amateur puis en
+                <strong>division r&eacute;gionale</strong>, ce qui m'a conduit &agrave; passer mon dipl&ocirc;me
+                d'initiateur
+                (D.I.F.F.E.).
+              </p>
+              <figure class="cv-preview">
+                <img src="assets/SKM_C300i25042921410-1.png" alt="Dipl&ocirc;me D.I.F.F.E." loading="lazy">
+              </figure>
+              <p>Jouer ou animer r&eacute;guli&egrave;rement cette pratique m'apprend &agrave; <strong>garder la
+                  t&ecirc;te
+                  froide</strong>, &agrave; me focaliser et &agrave; <strong>prendre des d&eacute;cisions de
+                  fa&ccedil;on
+                  m&eacute;thodique</strong> sous tension.</p>
+            </template>
+
+            <template data-card-template="sport">
+              <p>Le <strong>sport</strong> fait partie int&eacute;grante de mon &eacute;quilibre, c'est ce qui m'a
+                v&eacute;ritablement inculqu&eacute; la discipline et la r&eacute;gularit&eacute;.</p>
+              <p>J'ai pratiqu&eacute; la <strong>natation en comp&eacute;tition</strong> tr&egrave;s t&ocirc;t et ce
+                jusqu'&agrave; mes 19 ans (Niveau N3 : ~1:18 au 100m Brasse, ~58s au 100m Libre), suivi par des
+                ann&eacute;es
+                r&eacute;guli&egrave;res de pratique en <strong>sports de combats</strong> divers (Boxe, Kick-boxing,
+                MMA).</p>
+              <p>Aujourd'hui, je pratique principalement l'<strong>escalade</strong> (niveau bloc 5C). Comme dans tout
+                ce que
+                j'entreprends, j'y cherche une progression constante et m&eacute;thodique.</p>
+            </template>
+
+            <template data-card-template="audiovisuel">
+              <p>Mon regard sur la cr&eacute;ation de vid&eacute;os a d&eacute;marr&eacute; tr&egrave;s t&ocirc;t par
+                des
+                affinit&eacute;s dans les domaines du <strong>th&eacute;&acirc;tre</strong>, puis par une
+                v&eacute;ritable
+                exp&eacute;rimentation au sein d'une association audiovisuelle.</p>
+              <p>Apr&egrave;s avoir lanc&eacute; une <strong>cha&icirc;ne YouTube</strong> autour de l'informatique qui
+                a
+                plut&ocirc;t bien march&eacute;, je l'ai supprim&eacute;e pour pr&eacute;f&eacute;rer accompagner divers
+                cr&eacute;ateurs confirm&eacute;s et des communaut&eacute;s depuis les coulisses.</p>
+              <p>Cela m'a &eacute;videmment pouss&eacute; &agrave; int&eacute;grer r&eacute;ellement les
+                <strong>m&eacute;caniques
+                  d'attention</strong> et la fa&ccedil;on de structurer un format compr&eacute;hensible. Aujourd'hui, je
+                valide r&eacute;ellement ces acquis techniques accumul&eacute;s gr&acirc;ce un <strong>Dipl&ocirc;me de
+                  Monteur
+                  Professionnel</strong>.
+              </p>
+              <figure class="cv-preview">
+                <img src="assets/6478-1060151890-1.png" alt="Dipl&ocirc;me de monteur professionnel" loading="lazy">
+              </figure>
+            </template>
+
+            <template data-card-template="jeux">
+              <p>Dans l'animation de communaut&eacute;s g&eacute;antes, j'ai notamment plong&eacute; dans la
+                gamification pure en
+                g&eacute;rant des milliers de joueurs sur un <strong>ARG (Alternate Reality Game)</strong> via l'un des
+                plus
+                gros serveurs Discord fran&ccedil;ais.</p>
+              <p>Voulant automatiser certains process complexes, je me suis pris de fascination pour le
+                d&eacute;veloppement
+                ludique et pour toutes les m&eacute;caniques li&eacute;es au jeu vid&eacute;o. J'ai par ce biais
+                valid&eacute;
+                tr&egrave;s concr&egrave;tement une <strong>formation professionnelle de Game Designer</strong>,
+                consolidant des
+                bases indispensables en d&eacute;veloppement UX/Conception.</p>
+              <figure class="cv-preview">
+                <img src="assets/Certificat FORMATION PRO GD - Idris NAULLEAU-AURIAL.png"
+                  alt="Certificat de formation GD" loading="lazy">
+              </figure>
+              <p>Je m&egrave;ne aujourd'hui silencieusement deux d&eacute;veloppements de projets sur cette discipline
+                transversale m&ecirc;lant Art/Logique : un ARG narratif sur Discord form&eacute; en &eacute;quipe, et
+                <strong>un
+                  jeu vid&eacute;o narratif AA ind&eacute;pendant ambitieux</strong> n&eacute;cessitant au final une
+                future
+                lev&eacute;e de fonds europ&eacute;enne.
+              </p>
+            </template>
+
+            <template data-card-template="musique">
+              <p>Multi-instrumentiste (guitare, piano, percussions, basse), j'ai beaucoup jou&eacute; en groupe ou en
+                formation
+                (sc&egrave;ne Rock, Metal, jammings occidentaux/traditions d'autres pays) ce qui m'a appris &agrave;
+                <strong>m'adapter et &agrave; &eacute;couter</strong> continuellement les autres instruments.
+              </p>
+              <p>D&eacute;sormais plus isol&eacute; dans les r&eacute;p&eacute;titions, je d&eacute;veloppe tout cet axe
+                artistique via de l'<strong>improvisation</strong> au profit de machines appel&eacute;es "Loopers"
+                (p&eacute;dales pour encha&icirc;ner les boucles instrumentales empil&eacute;es l'une apr&egrave;s
+                l'autre en
+                direct). Je monte alors une piste solo r&eacute;digeant enti&egrave;rement ma construction percussive,
+                harmonique, etc.</p>
+              <div class="callout">
+                <p>Ce portfolio est enti&egrave;rement sonoris&eacute; : Si tu passes la souris sur le lecteur audio
+                  furtif
+                  cach&eacute; juste ici sur ton &eacute;cran, <strong>je fais 100% de la production, je joue tous les
+                    instruments !</strong></p>
+              </div>
+              <div class="hero-actions">
+                <button class="btn primary" type="button" data-player-unlock>Forcer L'Acc&egrave;s du Lecteur</button>
+              </div>
+            </template>
+          </div>
+        </div>
+      </section>
+
+      <div class="deck-modal" data-deck-modal hidden aria-hidden="true">
+        <div class="deck-modal__backdrop" data-deck-modal-backdrop></div>
+        <div class="deck-modal__panel" data-deck-modal-panel role="dialog" aria-modal="true"
+          aria-labelledby="deck-modal-title" tabindex="-1">
+          <button class="icon-btn deck-modal__close" type="button" data-deck-modal-close aria-label="Fermer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6 6l12 12"></path>
+              <path d="M18 6l-12 12"></path>
+            </svg>
+          </button>
+          <div class="deck-modal__body">
+            <div class="deck-modal__hero" data-deck-modal-hero></div>
+            <div class="deck-modal__scroll-cue" data-deck-modal-scroll-cue aria-hidden="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 5v14"></path>
+                <path d="M7 14l5 5 5-5"></path>
+              </svg>
+              <span>D&eacute;filer</span>
+            </div>
+            <h2 class="deck-modal__title sr-only" id="deck-modal-title" data-deck-modal-title></h2>
+            <div class="deck-modal__content" data-deck-modal-content></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="site-player" data-site-player hidden aria-hidden="true">
+      <div class="player" data-player>
+        <button class="icon-btn" type="button" data-player-toggle aria-label="Lecture" aria-pressed="false">
+          <svg class="icon icon--filled" data-icon="play" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+          <svg class="icon icon--filled" data-icon="pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M9 6h2v12H9zM13 6h2v12h-2z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn" type="button" data-player-panel-toggle aria-label="Ouvrir la playlist"
+          aria-expanded="false" aria-controls="player-panel">
+          <svg class="icon" data-icon="playlist" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4 6h11"></path>
+            <path d="M4 12h11"></path>
+            <path d="M4 18h11"></path>
+            <path d="M18 9v6l3-3z"></path>
+          </svg>
+        </button>
+        <div class="player-panel" id="player-panel" data-player-panel aria-label="Playlist" aria-hidden="true" hidden>
+          <p class="muted player-panel__hint">Playlist : ajoutez vos morceaux.</p>
+          <div class="player-tracks" data-player-tracks></div>
+        </div>
+        <audio data-player-audio preload="none"></audio>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
