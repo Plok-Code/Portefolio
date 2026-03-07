@@ -203,6 +203,25 @@ export const initAudioPlayer = () => {
             let lastNonZeroVolume = clamp(Number(initialState?.volume ?? 1), 0, 1) || 0.7;
             let statusOverride = "";
             let marqueeRaf = 0;
+            let trackLoadToken = 0;
+            const mediaUrlCache = new Map();
+
+            const resolvePlayableSrc = async (track) => {
+                if (!track?.src) return "";
+                if (mediaUrlCache.has(track.src)) return mediaUrlCache.get(track.src);
+
+                try {
+                    const response = await fetch(track.src);
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    const blob = await response.blob();
+                    const objectUrl = URL.createObjectURL(blob);
+                    mediaUrlCache.set(track.src, objectUrl);
+                    return objectUrl;
+                } catch {
+                    mediaUrlCache.set(track.src, track.src);
+                    return track.src;
+                }
+            };
 
             const clearTitleMarquee = () => {
                 titleEl.classList.remove("is-marquee");
@@ -385,9 +404,9 @@ export const initAudioPlayer = () => {
                 const wasActive = activeIndex === nextIndex && audio.src;
                 activeIndex = nextIndex;
                 const track = validTracks[activeIndex];
+                const loadToken = ++trackLoadToken;
 
                 if (!wasActive) {
-                    audio.src = track.src;
                     titleTextEl.textContent = track.title;
                     titleCloneEl.textContent = track.title;
                     titleEl.title = track.title;
@@ -400,6 +419,12 @@ export const initAudioPlayer = () => {
                 }
 
                 highlightActiveTrack();
+
+                if (!wasActive) {
+                    const playableSrc = await resolvePlayableSrc(track);
+                    if (loadToken !== trackLoadToken) return null;
+                    audio.src = playableSrc;
+                }
 
                 const targetTime = Number.isFinite(resumeTime) ? Math.max(0, resumeTime) : null;
                 if (targetTime !== null) {
@@ -535,8 +560,27 @@ export const initAudioPlayer = () => {
                 isSeeking = true;
             });
 
-            progressInput.addEventListener("pointerup", () => {
+            const commitSeekFromPointer = (clientX) => {
                 if (progressInput.disabled) return;
+                const rect = progressInput.getBoundingClientRect();
+                const maxValue = Number(progressInput.max) || 0;
+                if (!rect.width || maxValue <= 0) return;
+
+                const percent = clamp((clientX - rect.left) / rect.width, 0, 1);
+                const nextValue = percent * maxValue;
+                progressInput.value = nextValue.toString();
+                audio.currentTime = nextValue;
+                updateProgressUI();
+                persistState({}, { immediate: true });
+            };
+
+            progressInput.addEventListener("pointerup", (event) => {
+                if (progressInput.disabled) return;
+                commitSeekFromPointer(event.clientX);
+                isSeeking = false;
+            });
+
+            progressInput.addEventListener("pointercancel", () => {
                 isSeeking = false;
             });
 

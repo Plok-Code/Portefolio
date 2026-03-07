@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Idris NAULLEAU-AURIAL - Outil de révision (projet)</title>
+  <title>Idris NAULLEAU-AURIAL - Apprendre avec la Science</title>
   <script>
     document.documentElement.classList.add('js');
   </script>
@@ -40,25 +40,25 @@
           </svg>
           <span>LinkedIn</span>
         </a>
-        <div class="cv-downloads" aria-label="T&eacute;l&eacute;chargements CV">
+        <div class="cv-downloads" aria-label="Téléchargements CV">
           <details>
             <summary class="btn secondary btn--sm">Mon CV</summary>
             <div class="cv-downloads__links">
               <a class="btn primary btn--sm" href="assets/documents/Papier CV DE alternance.pdf" target="_blank"
-                rel="noreferrer">Version &agrave; imprimer</a>
+                rel="noreferrer">Version à imprimer</a>
               <a class="btn primary btn--sm" href="assets/documents/Mail CV DE alternance.pdf" target="_blank"
-                rel="noreferrer">Version num&eacute;rique</a>
+                rel="noreferrer">Version numérique</a>
             </div>
           </details>
         </div>
       </div>
-      <div class="breadcrumbs" aria-label="Fil d’Ariane">
+      <div class="breadcrumbs" aria-label="Fil d'Ariane">
         <div class="breadcrumbs__trail">
           <a href="index.html">Accueil</a>
           <span class="breadcrumbs__sep" aria-hidden="true">/</span>
           <a href="projets.html">Projets</a>
           <span class="breadcrumbs__sep" aria-hidden="true">/</span>
-          <span aria-current="page">Outil de révision</span>
+          <span aria-current="page">Apprendre avec la Science</span>
         </div>
       </div>
     </header>
@@ -66,49 +66,105 @@
     <main id="main">
       <section class="card reveal reveal-on-load">
         <p class="kicker">Projet</p>
-        <h1>Lorem ipsum outil de r&eacute;vision</h1>
+        <h1>Apprendre avec la Science - automatisation des revisions</h1>
         <div class="project-meta">
-          <span class="pill">Catégorie : Projets Data</span>
-          <span class="pill">Statut : terminé</span>
+          <span class="pill">Categorie : Projets Data</span>
+          <span class="pill">Statut : termine</span>
         </div>
-        <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate, mi at ultricies
-          efficitur, ipsum mi ultrices nunc, vitae gravida diam nibh sed velit.</p>
+        <p class="muted">
+          Objectif : transformer une recherche personnelle sur la memorisation efficace en un outil capable de
+          planifier les revisions, recuperer les contenus du jour, et generer automatiquement un auto-test pertinent
+          diffuse sur Discord.
+        </p>
         <div class="hero-actions">
-          <a class="btn secondary" href="projets.html">Retour aux projets</a>
-          <a class="btn primary" href="contact.html">Me contacter</a>
+          <a class="btn primary" href="https://github.com/Plok-Code/R-visions-WCS" target="_blank"
+            rel="noreferrer">Voir le GitHub</a>
         </div>
       </section>
 
       <section class="section">
         <div class="card reveal">
-          <h2>Aperçu</h2>
-          <img class="project-image" src="assets/visual-ebbinghaus.svg"
-            alt="Illustration abstraite : courbe de révision et points de rappel." loading="lazy" data-lightbox>
-        </div>
-      </section>
+          <div class="article-tags" aria-label="Technologies et briques du projet">
+            <span class="tag">Python</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Discord</span>
+            <span class="tag">Playwright</span>
+            <span class="tag">Beautiful Soup</span>
+            <span class="tag">LLM API</span>
+            <span class="tag">Webhook</span>
+            <span class="tag">Make / Integromat</span>
+          </div>
 
-      <section class="section">
-        <div class="card reveal">
-          <h2>Contexte</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci
-            luctus et ultrices posuere cubilia curae; Integer rhoncus dui sed nisi sollicitudin, ac cursus ex tincidunt.
+          <h2>Genese</h2>
+          <p>
+            L'apprentissage est un sujet central pour moi. J'ai donc decide de me former serieusement aux meilleures
+            techniques de memorisation et d'etudier la litterature scientifique sur le sujet. Cette recherche m'a
+            pousse a comprendre concretement ce qui se passe lorsqu'on apprend : selection de l'information, memoire de
+            travail, stockage en memoire long terme, recuperation, consolidation et courbe d'Ebbinghaus.
           </p>
-        </div>
-      </section>
+          <p>
+            En pratique, cela m'a amene a comparer les methodes d'apprentissage les plus efficaces, a distinguer les
+            faux bons conseils des approches vraiment solides, puis a concevoir un outil capable d'automatiser ce
+            travail de revision. Le premier resultat a pris la forme d'un prototype no-code construit avec Make /
+            Integromat, que j'ai presente dans la video ci-dessous.
+          </p>
 
-      <section class="section">
-        <div class="card reveal">
-          <h2>Objectif</h2>
-          <p>Praesent ut iaculis augue. Mauris non risus consequat, efficitur nisi ac, convallis nisl. Integer bibendum
-            nec metus nec tristique.</p>
-        </div>
-      </section>
+          <div class="project-video project-video--narrow">
+            <iframe src="https://www.youtube.com/embed/9VJu80a0QlY"
+              title="Presentation video - Apprendre avec la Science" loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
 
-      <section class="section">
-        <div class="card reveal">
-          <h2>Comp&eacute;tences d&eacute;montr&eacute;es</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut velit sem. Integer venenatis arcu in
-            lorem pellentesque, vitae suscipit ligula blandit.</p>
+          <p>
+            Cette premiere version expose deja le coeur de la demarche : s'appuyer sur les meilleures pratiques issues
+            de la recherche, utiliser la repetition espacee au bon moment, privilegier l'auto-test plutot que la simple
+            relecture, et supprimer au maximum la friction operationnelle pour que reviser devienne quelque chose de
+            faisable au quotidien.
+          </p>
+
+          <h2>Adaptation pour la Wild Code School</h2>
+          <p>
+            Plus tard, pendant mon cursus pour apprendre le metier de Data Analyst a la Wild Code School, j'ai
+            presente cet outil aux responsables de l'ecole et je leur ai propose une adaptation sur mesure pour leurs
+            besoins. Ils m'ont fait confiance et m'ont laisse carte blanche pour le mettre en place, y compris
+            l'acces a leur serveur Discord.
+          </p>
+
+          <h2>Pipeline automatise</h2>
+          <p>
+            J'ai donc repris ce principe en construisant un tableau Excel centralisant tous les cours, avec calcul
+            automatise des dates de revision optimales a partir de la courbe d'Ebbinghaus.
+          </p>
+
+          <div class="mini-timeline" aria-label="Pipeline du projet">
+            <span class="mini-timeline__step">Excel des cours</span>
+            <span class="mini-timeline__sep" aria-hidden="true">→</span>
+            <span class="mini-timeline__step">Calcul Ebbinghaus</span>
+            <span class="mini-timeline__sep" aria-hidden="true">→</span>
+            <span class="mini-timeline__step">Scraping</span>
+            <span class="mini-timeline__sep" aria-hidden="true">→</span>
+            <span class="mini-timeline__step">LLM</span>
+            <span class="mini-timeline__sep" aria-hidden="true">→</span>
+            <span class="mini-timeline__step">Webhook Discord</span>
+          </div>
+
+          <div class="callout">
+            <h3>Chaine de traitement</h3>
+            <ul>
+              <li>L'outil repere les cours a reviser du jour a partir du planning calcule.</li>
+              <li>Il recupere les URLs des cours concernes, puis scrape le contenu des pages, documents et sources externes avec Playwright et Beautiful Soup.</li>
+              <li>Le contenu agrege part ensuite dans un modele LLM configure sur mesure pour produire un auto-test d'environ 20 minutes couvrant l'ensemble des notions a reviser.</li>
+              <li>Le resultat final est envoye par webhook dans un salon Discord dedie aux promos Data Analyst de septembre 2025.</li>
+            </ul>
+          </div>
+
+          <h2>Competences demontrees</h2>
+          <p>
+            Ce projet combine recherche appliquee en sciences cognitives, structuration de contenu pedagogique,
+            automatisation de processus, scraping web, orchestration d'API, configuration LLM, generation d'auto-tests
+            et mise en production d'un usage concret dans un environnement collectif.
+          </p>
         </div>
       </section>
     </main>

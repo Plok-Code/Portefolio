@@ -1,9 +1,12 @@
 import { initSparks } from './sparks.js';
 import { initReveal, initRevealOnLoad } from './reveal.js';
+import { initZeroGravity, refreshZeroG } from './zero-gravity.js';
 import { ensureLightbox } from './lightbox.js';
 import { initProjectRail } from './project-rail.js';
 import { initCardDecks } from './decks.js';
+import { initBriefModals } from './brief-modal.js';
 import { initContactForms } from './contact.js';
+import { initPresentationViewers } from './presentation-viewer.js';
 import { initAudioPlayer, setSitePlayerVisible } from './audio-player.js';
 import { setupPjax, setInitPageFeatures, hardNavigate } from './pjax.js';
 import { showPlayerUnlockFireworks, showPlayerUnlockToast } from './unlock.js';
@@ -17,8 +20,11 @@ const initPageFeatures = () => {
     initProjectRail();
     ensureLightbox();
     initCardDecks();
+    initBriefModals();
     initContactForms();
+    initPresentationViewers();
     initAudioPlayer();
+    refreshZeroG(); // re-apply zero-g to new DOM after pjax navigation
 };
 
 // Set pjax callback
@@ -26,6 +32,7 @@ setInitPageFeatures(initPageFeatures);
 
 const initGlobals = () => {
     initSparks();
+    initZeroGravity();
     setupPjax();
 
     document.addEventListener("click", (event) => {
@@ -44,7 +51,10 @@ const initGlobals = () => {
 
         if (!wasEnabled) {
             initAudioPlayer(); // initialize the player now that it's enabled
-            const fireworksDone = showPlayerUnlockFireworks({ text: "Let Play Music" });
+            const fireworksDone = showPlayerUnlockFireworks({
+                text: "Let Play Music",
+                durationMs: 4000,
+            });
             showPlayerUnlockToast({ until: fireworksDone });
         }
     });

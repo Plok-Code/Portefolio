@@ -1,4 +1,5 @@
 import { prefersReducedMotion } from './config.js';
+import { createSpark } from './sparks.js';
 
 let projectObserver = null;
 let projectRailCleanup = null;
@@ -27,10 +28,27 @@ export const initProjectRail = () => {
         else if (typeof mobileMenuMedia.addListener === "function") mobileMenuMedia.addListener(syncNavMenu);
     }
 
-    const screens = Array.from(rail.querySelectorAll("[data-project-screen]"));
-    if (!screens.length) return;
+    const getScreenStatus = (screen) => {
+        const statusText = screen.querySelector(".project-meta .pill")?.textContent?.toLowerCase() ?? "";
+        return statusText.includes("en cours") ? "in-progress" : "done";
+    };
+
+    const rawScreens = Array.from(rail.querySelectorAll("[data-project-screen]"));
+    if (!rawScreens.length) return;
+
+    const statusRank = { done: 0, "in-progress": 1 };
+    const screens = rawScreens
+        .map((screen, index) => ({ screen, index, status: getScreenStatus(screen) }))
+        .sort((a, b) => (statusRank[a.status] - statusRank[b.status]) || (a.index - b.index))
+        .map((entry) => entry.screen);
+
+    // Keep all finished projects at the top and non-finished at the bottom.
+    for (const screen of screens) rail.appendChild(screen);
 
     navList.innerHTML = "";
+
+    const getStatusLabel = (status) => (status === "in-progress" ? "Projets en cours" : "Projets termines");
+    let previousStatus = null;
 
     const navItems = screens.map((screen) => {
         const label =
@@ -38,12 +56,29 @@ export const initProjectRail = () => {
             screen.getAttribute("aria-label") ||
             screen.querySelector("h2, h3")?.textContent?.trim() ||
             "Bloc projet";
+        const status = getScreenStatus(screen);
+
+        if (previousStatus && previousStatus !== status) {
+            const separator = document.createElement("div");
+            separator.className = "project-nav-separator";
+            separator.setAttribute("role", "separator");
+            separator.setAttribute("aria-label", `Separation: ${getStatusLabel(status)}`);
+
+            const separatorLabel = document.createElement("span");
+            separatorLabel.className = "project-nav-separator__label";
+            separatorLabel.textContent = getStatusLabel(status);
+            separator.append(separatorLabel);
+
+            navList.appendChild(separator);
+        }
+        previousStatus = status;
 
         const button = document.createElement("button");
         button.type = "button";
         button.className = "project-nav-item";
         button.dataset.target = screen.id;
         button.dataset.label = label;
+        button.dataset.status = status;
         button.setAttribute("aria-label", label);
         button.setAttribute("aria-controls", screen.id);
 
@@ -90,7 +125,23 @@ export const initProjectRail = () => {
         }
 
         const activeItem = navItems.find((button) => button.dataset.target === id);
-        if (navCurrent && activeItem) navCurrent.textContent = activeItem.dataset.label;
+
+        // Emit spark particles on the active project card
+        const activeScreen = document.getElementById(id);
+        if (activeScreen && !prefersReducedMotion) {
+            const img = activeScreen.querySelector(".project-image");
+            if (img) {
+                const rect = img.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height * 0.3;
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(() => createSpark(
+                        cx + (Math.random() - 0.5) * rect.width * 0.6,
+                        cy + (Math.random() - 0.5) * 30
+                    ), i * 100);
+                }
+            }
+        }
     };
 
     const intersections = new Map();

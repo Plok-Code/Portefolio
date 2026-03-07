@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Idris NAULLEAU-AURIAL - Projet Netflix (projet)</title>
+  <title>Idris NAULLEAU-AURIAL - WildFlix (app de recommandation)</title>
   <script>
     document.documentElement.classList.add('js');
   </script>
@@ -40,25 +40,25 @@
           </svg>
           <span>LinkedIn</span>
         </a>
-        <div class="cv-downloads" aria-label="T&eacute;l&eacute;chargements CV">
+        <div class="cv-downloads" aria-label="Telechargements CV">
           <details>
             <summary class="btn secondary btn--sm">Mon CV</summary>
             <div class="cv-downloads__links">
               <a class="btn primary btn--sm" href="assets/documents/Papier CV DE alternance.pdf" target="_blank"
-                rel="noreferrer">Version &agrave; imprimer</a>
+                rel="noreferrer">Version a imprimer</a>
               <a class="btn primary btn--sm" href="assets/documents/Mail CV DE alternance.pdf" target="_blank"
-                rel="noreferrer">Version num&eacute;rique</a>
+                rel="noreferrer">Version numerique</a>
             </div>
           </details>
         </div>
       </div>
-      <div class="breadcrumbs" aria-label="Fil d’Ariane">
+      <div class="breadcrumbs" aria-label="Fil d'Ariane">
         <div class="breadcrumbs__trail">
           <a href="index.html">Accueil</a>
           <span class="breadcrumbs__sep" aria-hidden="true">/</span>
           <a href="projets.html">Projets</a>
           <span class="breadcrumbs__sep" aria-hidden="true">/</span>
-          <span aria-current="page">Projet Netflix</span>
+          <span aria-current="page">WildFlix</span>
         </div>
       </div>
     </header>
@@ -66,49 +66,248 @@
     <main id="main">
       <section class="card reveal reveal-on-load">
         <p class="kicker">Projet</p>
-        <h1>Lorem ipsum plateforme type netflix</h1>
+        <h1>WildFlix - App web de recommandation de films</h1>
         <div class="project-meta">
-          <span class="pill">Catégorie : Outils et plateformes numériques</span>
-          <span class="pill">Statut : terminé</span>
+          <span class="pill">Categorie : Outils et plateformes numeriques</span>
+          <span class="pill">Statut : termine</span>
         </div>
-        <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate, mi at ultricies
-          efficitur, ipsum mi ultrices nunc, vitae gravida diam nibh sed velit.</p>
+        <p class="muted">
+          Objectif : concevoir une application capable de recommander 5 films a partir d'un titre saisi, et livrer
+          des dashboards analytiques (Power BI et Python) pour piloter la qualite des donnees et les KPIs du catalogue.
+        </p>
         <div class="hero-actions">
-          <a class="btn secondary" href="projets.html">Retour aux projets</a>
-          <a class="btn primary" href="contact.html">Me contacter</a>
+          <button class="btn primary" type="button" data-brief-open="wildflix" aria-haspopup="dialog"
+            aria-controls="brief-modal-wildflix" aria-expanded="false">
+            Voir le brief
+          </button>
         </div>
       </section>
 
-      <section class="section">
-        <div class="card reveal">
-          <h2>Aperçu</h2>
-          <img class="project-image" src="assets/visual-netflix.svg"
-            alt="Illustration abstraite : application web et backoffice." loading="lazy" data-lightbox>
+      <div class="deck-modal brief-modal" id="brief-modal-wildflix" data-brief-modal="wildflix" hidden
+        aria-hidden="true">
+        <div class="deck-modal__backdrop" data-brief-modal-backdrop></div>
+        <div class="deck-modal__panel brief-modal__panel" data-brief-modal-panel role="dialog" aria-modal="true"
+          aria-labelledby="brief-modal-title-wildflix" tabindex="-1">
+          <button class="icon-btn deck-modal__close" type="button" data-brief-modal-close aria-label="Fermer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M6 6l12 12"></path>
+              <path d="M18 6l-12 12"></path>
+            </svg>
+          </button>
+          <div class="deck-modal__body brief-modal__body">
+            <div class="deck-modal__scroll-cue" data-brief-modal-scroll-cue aria-hidden="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 5v14"></path>
+                <path d="M7 14l5 5 5-5"></path>
+              </svg>
+              <span>Defiler</span>
+            </div>
+            <h2 class="deck-modal__title sr-only" id="brief-modal-title-wildflix">Brief WildFlix</h2>
+            <div class="deck-modal__content brief-modal__content">
+              <section class="card">
+                <p class="kicker">Brief du projet</p>
+                <h1>WildFlix - Systeme de recommandation de films</h1>
+                <p class="muted">
+                  Source (brief original) :
+                  <a href="https://patrick-wampe.github.io/Synapse-Learners/wildprojet2wildflix.html" target="_blank"
+                    rel="noreferrer">patrick-wampe.github.io/Synapse-Learners</a>
+                </p>
+              </section>
+
+              <section class="section">
+                <div class="card doc-sheet">
+                  <section id="introduction">
+                    <h2>Introduction</h2>
+                    <img src="https://welovecinema.bnpparibas/sites/default/files/imported_medias/1_Beaugrenelle.ONYX-c-Fre%25CC%2581de%25CC%2581ric-Berthet.HD_.006.jpg"><br>
+                    <p class="mb-4 text-lg">« Netflix est un service de diffusion en streaming qui permet à ses membres de regarder une grande variété de séries TV, films, documentaires, etc. sur des milliers d'appareils connectés à Internet. »</p>
+                    <p class="mb-4">Créé en 1998, Netflix pèse aujourd’hui plus de 20 milliards de dollars de chiffre d'affaires et consomme 12,6% de la bande passante Internet mondiale.</p>
+                    <img src="https://www.researchgate.net/publication/323726564/figure/fig5/AS:631605009846299@1527597777415/Content-based-filtering-vs-Collaborative-filtering-Source.png">
+                    <p class="mb-4">Lorsqu’on accède au service Netflix, le système de recommandations aide l’utilisateur à trouver aussi facilement que possible les séries TV ou films qu’il pourrait apprécier, grâce à un système de recommandation. Netflix calcule ainsi la probabilité que l’utilisateur regarde un titre donné du catalogue de Netflix, et peut ainsi optimiser ces partenariats ou plus globalement sa stratégie marketing. Netflix est l'archétype de la société data-driven.</p>
+                    <p class="font-semibold text-lg">Votre client n’est pas Netflix, mais il a de grandes ambitions !</p>
+                  </section>
+
+                  <section id="objectif">
+                    <h2>Objectif</h2><br>
+                    <img src="https://www.bbc.co.uk/staticarchive/1e697c16b8dad7060e80c3e76641f4ca52b31c7f.gif"><br>
+                    <p class="mb-4">Vous êtes un Data Analyst freelance. Un cinéma en perte de vitesse situé dans la Creuse vous contacte. Il a décidé de passer le cap du digital en créant un site Internet taillé pour les locaux. </p>
+                    <p class="mb-4">Pour aller encore plus loin, il vous demande de créer un <b><a href="https://fr.wikipedia.org/wiki/Syst%C3%A8me_de_recommandation" target="_blank" style="color:blue;">moteur de recommandations de films</a></b>.</p>
+                    <p class="mb-4">Pour l’instant, aucun client n’a renseigné ses préférences, vous êtes dans une <b><a href="https://en.wikipedia.org/wiki/Cold_start_(recommender_systems)" target="_blank" style="color:blue;">situation de cold start</a></b>. </p>
+
+                    <img src="https://dhavalpatel2101992.wordpress.com/wp-content/uploads/2021/05/image-36.png?w=624">
+                    <p class="mb-4">Mais heureusement, le client vous donne une base de données de films basée sur la plateforme IMDb.</p>
+
+                    <h3 class="font-semibold">Le client souhaite :</h3>
+                    <ul>
+                      <li>Une application web avec <code>Streamlit</code>. L’utilisateur pourra indiquer un film et obtiendra 5 recommandations de films. </li>
+                      <li>Un tableau de bord sur lequel il pourrait mener des analyses sur les données nettoyées et ainsi répondre à des questions (quels sont les acteurs/types de film/etc les plus souvent présents…). À vous de réfléchir à des KPIs intéressants. Il hésite au niveau de la technologie, du coup il vous demande un tableau de bord réalisé avec le logiciel <code>Power BI</code> et un autre avec Python. Ils contiendront des filtres.</li>
+                    </ul>
+                  </section>
+
+                  <section id="bonus">
+                    <h2>BONUS</h2>
+                    <ul>
+                      <li>Complétez le jeu de données avec <code>OMDb API</code>. Vous ajouterez toutes les données de l’API à votre jeu de données.</li>
+                      <li>Il y aura une page de connexion pour que seules les personnes authentifiées puissent accéder aux services du site web. Il y aura 2 comptes : Administrateur (il a accès au tableau de bord) et client. Le client et l’administrateur pourront obtenir des recommandations de 5 films en fonction du film qu’ils auront indiqué. Il sera possible de créer un compte, de modifier son mot de passe ou de répondre à une question en cas de mot de passe oublié. L’administrateur pourra voir tous les comptes créés, les modifier ou en supprimer dans une page dédiée.</li>
+                      <li>Vous utiliserez <code>OMDb API</code> pour afficher les pochettes des films lors du choix de l’utilisateur et aussi au niveau des recommandations.</li>
+                      <li>Vous versionnerez le projet avec <code>Git</code> et <code>Github</code>.</li>
+                      <li>Il y aura une page de paramétrage qui permettra d’indiquer plusieurs informations telles que : choix du nombre de films à proposer,  choix pour n’indiquer que les films avec une certaine durée, que les films en noir et blanc ou en couleur, uniquement les films adapté à toutes les classes d'âge, que les films d’un certain genre… </li>
+                      <li>En plus du modèle IA que vous choisirez pour recommander des films, l’utilisateur pourra choisir un autre modèle, le <code>cosine similarity</code>, que vous implémenterez.</li>
+                      <li>Le site web <code>Streamlit</code> sera  déployé en ligne.</li>
+                      <li>Vous permettrez de voir la description du film traduite en français.</li>
+                      <li>Il sera possible de traduire automatiquement le site web en anglais ou en français.</li>
+                      <li>Reconnaissance faciale ou vocale via la caméra pour se connecter à son compte.</li>
+                      <li>Une synthèse vocale de la description du film.</li>
+                    </ul>
+                  </section>
+
+                  <section id="etapes">
+                    <img src="https://scikit-learn.org/1.3/_static/ml_map.png">
+                    <h2>Étapes du Projet</h2>
+                    <p class="mb-4">Voici les étapes qu’on vous propose : </p>
+                    <ol>
+                      <li class="mb-4">
+                        <strong>Prendre connaissance des données et du contexte</strong> des systèmes de recommandations, de leur fonctionnement.
+                      </li>
+                      <li class="mb-4">
+                        <strong>Nettoyez et filtrer les données :</strong>   
+                        <ul>
+                          <li>Listez l’ensemble des features du fichier, quantitatives (numériques) ou qualitatives (catégorielles).</li>
+                          <li>Supprimez les lignes en doublon.</li>
+                          <li>Affichez les taux de remplissage des features du dataset.</li>
+                          <li>Sélectionnez des features qui sont assez remplis (plus que X%) et qui vous paraissent intéressantes pour effectuer la prédiction de votre cible. Attention à ne pas supprimer des colonnes qui seraient pertinentes pour la recommandation.</li>
+                        </ul>
+                      </li>
+                      <li class="mb-4">
+                        <strong>Automatisez tout ce que vous avez fait jusqu’à maintenant</strong> en utilisant :
+                        <ul>
+                          <li>une fonction qui prend en input votre dataframe d’origine ;</li>
+                          <li>les méthodes spécifiques aux dataframes pandas ;</li>
+                          <li>accessoirement numpy si ce que vous voulez faire n’est pas directement ou simplement disponible via la librairie pandas.</li>
+                        </ul>
+                      </li>
+                      <li class="mb-4">
+                        <strong>Identifiez et traitez les valeurs aberrantes et manquantes</strong>
+                        <ul>
+                          <li>Vérifiez si les valeurs manquantes sont manquantes de manière aléatoire ou s'il y a une raison systématique derrière cela, car cela peut orienter votre choix de méthode de traitement.</li>
+                          <li>Préférez la connaissance  de la variable (ou métier, e.g: remplissage par 0 de la variable fibre pour un produit qui est connu pour ne pas contenir de fibre).</li>
+                          <li>Quand nécessaire, utilisez des méthodes:
+                            <ul>
+                              <li>statistiques: médiane, moyennes etc. </li>
+                              <li>automatique: KNN, iterative, régression linéaire…</li>
+                            </ul>
+                          </li>
+                          <li>Visualisez vos données en utilisant des graphiques tels que des diagrammes de dispersion (scatter plots), des boîtes à moustaches (box plots) ou des histogrammes pour détecter visuellement les valeurs aberrantes.</li>
+                          <li>Privilégiez une approche orientée métier pour détecter et décider de quoi faire des valeurs aberrantes (vérifier sur internet la valeur “normale” pour un tel produit). </li>
+                          <li>Utilisez des méthodes statistiques pour identifier les valeurs aberrantes, comme le calcul des seuils d'anomalies basés sur les écarts-types ou les plages interquartiles.</li>
+                          <li>Sélectionnez la méthode de traitement appropriée pour les valeurs aberrantes identifiées, telles que la suppression des observations ou le remplacement par des valeurs logiques (maximum connu, médiane, catégorie dédiée, NaN, etc.).</li>
+                        </ul>
+                      </li>
+                      <li class="mb-4">
+                        <strong>Effectuez des analyse uni et bivariée</strong>
+                        <ul>
+                          <li>Quels sont les acteurs les plus présents ? À quelle période ? La durée moyenne des films s’allonge ou se raccourcit avec les années ? Les acteurs de série sont-ils les mêmes qu’au cinéma ? Les acteurs ont en moyenne quel âge ? Quels sont les films les mieux notés ? Partagent-ils des caractéristiques communes ? etc…</li>
+                          <li>Pour l'analyse univariée, utilisez des visualisations appropriées...</li>
+                          <li>Pour l'analyse bivariée, utilisez des graphiques de dispersion...</li>
+                          <li>Calculez les statistiques descriptives...</li>
+                          <li>Vous cherchez des variables corrélées avec votre cible mais pas trop entre elles pour éviter la colinéerité.</li>
+                          <li>Faites attention à l'échelle des données...</li>
+                          <li>Soyez prudent lors de l'interprétation des corrélations...</li>
+                          <li>Assurez-vous de comprendre le contexte de votre problème...</li>
+                          <li>Utilisez des techniques de visualisation avancées...</li>
+                          <li>Utilisez des méthodes statistiques...</li>
+                        </ul>
+                      </li>
+                      <li class="mb-4">
+                        <strong>Réaliser un tableau de bord :</strong> Le client en veut un avec le logiciel <code>Power BI</code> et un avec un module Python.
+                      </li>
+                      <li class="mb-4">
+                        Après cette étape analytique vous utiliserez des <strong>algorithmes de machine learning</strong> pour recommander des films en fonction de films qui ont été appréciés par le spectateur.
+                      </li>
+                      <li class="mb-4">
+                        Vous utiliserez le module Python <code>scikit learn</code> ! Quel algorithme de machine learning est le plus pertinent ? À vous de le décider.
+                      </li>
+                      <li class="mb-4">
+                        Durant votre projet vous aurez la possibilité de contacter le lead Data Analyst du projet. Malheureusement ce dernier ne pourra pas toujours vous aider mais il pourra vous fournir un code qui est proche de ce que vous devez faire.
+                      </li>
+                    </ol>
+                  </section>
+
+                  <section id="sources">
+                    <h2>Sources de données</h2>
+                    <img src="https://news.higherorlowergame.com/wp-content/uploads/imdb-top-250.jpg">
+                    <p class="mb-4">Les données sont disponibles sur le site IMDB. Les données sont réparties en plusieurs tables (les films, les acteurs, les réalisateurs, les notes, etc…)</p>
+                    <ul>
+                      <li>La documentation expliquant brièvement la définition de chaque colonne et de chaque table est disponible <a href="https://www.imdb.com/interfaces/" target="_blank">ici</a>.</li>
+                      <li>Les datasets sont disponibles <a href="https://datasets.imdbws.com/" target="_blank">ici</a>.</li>
+                      <li>Dataset alternatif plus simple à gérer (IMDb 5000 Movie Dataset - ZIP) : <a href="https://s3-eu-west-1.amazonaws.com/static.oc-static.com/prod/courses/files/Parcours_data_scientist/Projet+-+Moteur+de+recommandation+de+films/imdb-5000-movie-dataset.zip" target="_blank">Télécharger ici</a>.</li>
+                    </ul>
+                  </section>
+
+                  <section id="demo-day">
+                    <h2>Demo day</h2>
+                    <p class="mb-4">L’objectif n’est pas d’arriver à un travail parfait, mais que le système fonctionne et que vous arriviez à déceler les points à améliorer.</p>
+                    <p class="mb-4">Vous expliquerez votre démarche et les difficultés rencontrés lors d’une présentation orale de 15 minutes, et ferez une démonstration devant des représentants des clients. Votre client vous donnera quelques noms de films pendant la présentation, vous effectuerez des recommandations de films basés sur ces films. Les autres spectateurs pourront aussi proposer un film.</p>
+                  </section>
+
+                  <section id="missions">
+                    <h2>Missions</h2>
+                    <ul>
+                      <li>Faire une présentation pour présenter votre travail, expliquer votre démarche, les outils utilisés, les difficultés rencontrées, et des pistes d’amélioration.</li>
+                      <li>Présenter les indicateurs statistiques et KPI pertinents sur les films.</li>
+                      <li>Créer un système de recommandation de film en utilisant des algorithmes de machine learning et faire une démonstration de ces recommandations sur des films proposés en séance par le client.</li>
+                    </ul>
+                  </section>
+
+                  <section id="livrables">
+                    <h2>Livrables attendus</h2>
+                    <ul>
+                      <li>Un notebook contenant l’exploration et le nettoyage des données ainsi que les visualisations. Vous expliquerez vos choix de nettoyage et vos conclusions d’exploration dans un document de votre choix.</li>
+                      <li>Des visuels présentant les KPI pertinents.</li>
+                      <li>Un notebook pour l’étape Système de recommandation  avec le code source avec vos commentaires.</li>
+                      <li>Une application permettant d’indiquer le film de notre choix ainsi que des critères personnels et qui retourne des recommandations avec les visuels des pochettes et des informations sur les films.</li>
+                      <li>Un tableau de bord avec Power BI</li>
+                    </ul>
+                  </section>
+
+                  <section id="technologies">
+                    <h2>Technologies</h2>
+                    <ul>
+                      <li>Numpy</li>
+                      <li>Pandas</li>
+                      <li>Matplotlib</li>
+                      <li>Seaborn</li>
+                      <li>Scikit learn</li>
+                      <li>Streamlit</li>
+                      <li>Power BI</li>
+                    </ul>
+                  </section>
+
+                  <section id="ressources">
+                    <h2>Ressources</h2>
+                    <ul>
+                      <li><a href="https://blogs.gartner.com/martin-kihn/how-to-build-a-recommender-system-in-python/" target="_blank">How to Build a Recommender System in Python</a></li>
+                      <li><a href="https://linuxfr.org/news/predire-la-note-d-un-journal-sur-linuxfr-org" target="_blank">Prédire la note d’un journal sur LinuxFr.org</a></li>
+                      <li><a href="https://www.mediego.com/fr/blog/netflix-success-story-basee-sur-algorithmes-de-recommandation/" target="_blank">Netflix, une success story basée sur les algorithmes</a></li>
+                      <li><a href="https://www.podcastscience.fm/dossiers/2012/04/25/les-algorithmes-de-recommandation/" target="_blank">Podcast Science : Les algorithmes de recommandation</a></li>
+                      <li><a href="https://www.youtube.com/watch?v=82KLS2C_gNQ&list=PLO_fdPEVlfKqMDNmCFzQISI2H_nJcEDJq" target="_blank">YouTube Playlist 1</a></li>
+                      <li><a href="https://www.youtube.com/watch?v=SwGghwhk9Ak&list=PLyh35eYRez8e0KxsArawcDm6TYPVq0rU_" target="_blank">YouTube Playlist 2</a></li>
+                      <li><a href="https://www.youtube.com/watch?v=CXf_7W-qACU&list=PLlVRzxtr0mQkc54pDYopUwuFoyovYoZiQ" target="_blank">YouTube Playlist 3</a></li>
+                    </ul>
+                  </section>
+                </div>
+              </section>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
 
       <section class="section">
         <div class="card reveal">
-          <h2>Contexte</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci
-            luctus et ultrices posuere cubilia curae; Integer rhoncus dui sed nisi sollicitudin, ac cursus ex tincidunt.
-          </p>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="card reveal">
-          <h2>Objectif</h2>
-          <p>Praesent ut iaculis augue. Mauris non risus consequat, efficitur nisi ac, convallis nisl. Integer bibendum
-            nec metus nec tristique.</p>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="card reveal">
-          <h2>Comp&eacute;tences d&eacute;montr&eacute;es</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut velit sem. Integer venenatis arcu in
-            lorem pellentesque, vitae suscipit ligula blandit.</p>
+          <h2>Apercu du projet</h2>
+          <img class="project-image" src="assets/wildflix1.png"
+            alt="Schema comparatif entre filtrage collaboratif et filtrage base sur le contenu." loading="lazy"
+            data-lightbox>
+          <p class="muted">La presentation complete sera integree ici des reception du fichier de slides.</p>
         </div>
       </section>
     </main>
