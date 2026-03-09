@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idris NAULLEAU-AURIAL - Data Trainers</title>
+  <script>
+    document.documentElement.classList.add('js');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/playlist.js" defer></script>
+  <script type="module" src="../js/main.js"></script>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">Idris NAULLEAU-AURIAL</div>
+      <nav aria-label="Navigation principale">
+        <a href="../index.html">Accueil</a>
+        <a href="../profil.html">Profil</a>
+        <a href="../projets.html" aria-current="page">Projets</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-actions" aria-label="Liens rapides">
+        <a class="btn secondary btn--sm btn--icon" href="https://www.linkedin.com/in/idris-naulleau-aurial-9278b711b/"
+          target="_blank" rel="noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+            <path d="M8 11v5"></path>
+            <path d="M8 8v.01"></path>
+            <path d="M12 16v-5"></path>
+            <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+        <div class="cv-downloads" aria-label="T&eacute;l&eacute;chargements CV">
+          <details>
+            <summary class="btn secondary btn--sm">Mon CV</summary>
+            <div class="cv-downloads__links">
+              <a class="btn primary btn--sm" href="../assets/documents/Papier CV DE alternance.pdf" target="_blank"
+                rel="noreferrer">Version &agrave; imprimer</a>
+              <a class="btn primary btn--sm" href="../assets/documents/Mail CV DE alternance.pdf" target="_blank"
+                rel="noreferrer">Version num&eacute;rique</a>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="breadcrumbs" aria-label="Fil d&rsquo;Ariane">
+        <div class="breadcrumbs__trail">
+          <a href="../index.html">Accueil</a>
+          <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+          <a href="../projets.html">Projets</a>
+          <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+          <span aria-current="page">Data Trainers</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="card reveal reveal-on-load">
+        <p class="kicker">Projet</p>
+        <h1>Data Trainers - plateforme de r&eacute;vision et simulateur Data Analyst</h1>
+        <div class="project-meta">
+          <span class="pill">Cat&eacute;gorie : EdTech, produit data &amp; LMS</span>
+          <span class="pill">Statut : prototype en cours</span>
+        </div>
+        <p class="muted">
+          Objectif : construire une <strong>plateforme de r&eacute;vision data</strong> avec deux couches produit bien
+          distinctes. D&rsquo;un c&ocirc;t&eacute;, un <strong>simulateur gratuit</strong> fond&eacute; sur des
+          <strong>QCM</strong> et des <strong>flashcards</strong>. De l&rsquo;autre, un
+          <strong>programme structur&eacute; Data Analyst 2025+</strong>, pilot&eacute; par une logique de
+          <strong>r&eacute;p&eacute;tition espac&eacute;e</strong>, d&rsquo;<strong>authentification</strong>, de
+          <strong>dashboard &eacute;l&egrave;ve</strong> et de <strong>back-office admin</strong>.
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="card reveal">
+          <div class="article-tags" aria-label="Technologies et briques du projet">
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">SQLAlchemy</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">QCM</span>
+            <span class="tag">Flashcards</span>
+            <span class="tag">Spaced repetition</span>
+            <span class="tag">Admin dashboard</span>
+          </div>
+
+          <p class="muted">
+            Le projet s&rsquo;appelle <strong>Data Science Trainer</strong>, nom d&rsquo;emprunt choisi le temps que
+            le branding soit vraiment construit. Le coeur du produit reste le m&ecirc;me : un environnement de
+            r&eacute;vision intensif pour former ou remettre &agrave; niveau un profil Data Analyst.
+          </p>
+
+          <div class="project-showcase" data-lightbox-gallery="data-trainers"
+            aria-label="Aper&ccedil;us Data Trainers">
+            <figure class="project-shot">
+              <img class="project-image project-image--contain" src="../assets/images/data-trainers-home.png"
+                alt="Landing page Data Science Trainer avec promesse produit orient&eacute;e r&eacute;vision data"
+                loading="lazy" data-lightbox>
+            </figure>
+            <figure class="project-shot">
+              <img class="project-image project-image--contain" src="../assets/images/dt1.png"
+                alt="Dashboard d'administration Data Science Trainer avec KPI et r&eacute;partition du contenu"
+                loading="lazy" data-lightbox>
+            </figure>
+          </div>
+
+          <h2>Gen&egrave;se</h2>
+          <p>
+            J&rsquo;ai commenc&eacute; ce projet pour une raison tr&egrave;s simple :
+            <strong>mieux int&eacute;grer mes cours</strong> et aider mes
+            <strong>camarades de promo</strong> &agrave; r&eacute;viser plus efficacement. Au d&eacute;part, je ne le
+            pensais pas du tout comme un produit &agrave; commercialiser. Je voulais surtout construire un outil utile,
+            concret et assez robuste pour soutenir notre rythme de formation.
+          </p>
+          <p>
+            En voyant l&rsquo;<strong>engouement</strong> autour du projet, les retours positifs et le potentiel d&rsquo;usage,
+            j&rsquo;ai d&eacute;cid&eacute; de l&rsquo;approfondir. C&rsquo;est l&agrave; que l&rsquo;id&eacute;e a chang&eacute;
+            d&rsquo;&eacute;chelle : passer d&rsquo;un simple support personnel de r&eacute;vision &agrave; une vraie
+            plateforme capable de structurer l&rsquo;entra&icirc;nement, la progression et, plus tard, un programme complet.
+          </p>
+
+          <h2>Positionnement produit</h2>
+          <p>
+            J&rsquo;ai pens&eacute; le projet comme un <strong>LMS &agrave; deux vitesses</strong>. La couche publique
+            sert &agrave; entrer vite dans l&rsquo;entra&icirc;nement : choix d&rsquo;un th&egrave;me, lancement de
+            tests, cartes de r&eacute;vision, puis cr&eacute;ation de compte pour sauvegarder la progression. La couche
+            premium transforme ensuite cette mati&egrave;re en
+            <strong>programme complet semaine par semaine</strong>.
+          </p>
+
+          <div class="callout">
+            <h3>Deux exp&eacute;riences dans le m&ecirc;me produit</h3>
+            <ul>
+              <li><strong>Simulateur gratuit</strong> : banque de QCM, flashcards, r&eacute;vision ponctuelle, tests rapides et acc&egrave;s libre au contenu public.</li>
+              <li><strong>Programme payant</strong> : cursus structur&eacute;, routine journali&egrave;re, progression sauvegard&eacute;e, onboarding, dashboard &eacute;l&egrave;ve et logique de personnalisation.</li>
+              <li><strong>Compte admin / cr&eacute;ateur</strong> : gestion des contenus, lecture des KPI d&rsquo;usage, suivi des utilisateurs et pilotage global de la plateforme.</li>
+            </ul>
+          </div>
+
+          <p>
+            D&egrave;s la landing, j&rsquo;ai cibl&eacute; autant la <strong>reconversion</strong>, les
+            <strong>&eacute;tudiants</strong> que les <strong>professionnels en poste</strong>, avec une promesse
+            simple : s&rsquo;entra&icirc;ner sur SQL, Python, stats, BI, machine learning, storytelling et soft skills
+            dans un environnement de r&eacute;vision unique.
+          </p>
+
+          <h2>M&eacute;canique p&eacute;dagogique</h2>
+          <p>
+            La partie la plus forte du projet est la logique d&rsquo;apprentissage. J&rsquo;ai construit le programme
+            payant autour d&rsquo;une <strong>routine journali&egrave;re stricte</strong> : commencer par un test de
+            r&eacute;vision g&eacute;n&eacute;r&eacute; dynamiquement, continuer avec le nouveau cours du jour, puis
+            terminer par un exercice de validation.
+          </p>
+          <p>
+            Cette logique vient directement de ce que j&rsquo;ai appris en construisant
+            <a href="../pages/projet-outil-revision-ebbinghaus.html" style="color: var(--accent-cool);">Apprendre avec la Science</a> :
+            <strong>r&eacute;p&eacute;tition espac&eacute;e</strong>, <strong>r&eacute;cup&eacute;ration active</strong>,
+            planification au bon moment et r&eacute;duction maximale de la friction de r&eacute;vision. Data Trainers
+            reprend ces principes, mais en les appliquant &agrave; un corpus Data Analyst beaucoup plus large et plus
+            industrialis&eacute;.
+          </p>
+
+          <div class="callout">
+            <h3>Contenu</h3>
+            <ul>
+              <li>Structure des cat&eacute;gories et sous-cat&eacute;gories.</li>
+              <li>Banque de tests QCM.</li>
+              <li>Decks de flashcards par sous-cat&eacute;gorie.</li>
+              <li>Modules, objectifs, outline et liste de lessons.</li>
+              <li>Unit&eacute;s atomiques du programme Data Analyst 2025+.</li>
+            </ul>
+          </div>
+
+          <h2>Volum&eacute;trie du contenu</h2>
+          <p>
+            J&rsquo;ai d&eacute;j&agrave; structur&eacute; <strong>18 cat&eacute;gories</strong>,
+            <strong>175 modules de cours</strong>, <strong>366 lessons</strong>,
+            <strong>3 490 tests</strong>, <strong>13 960 questions</strong>,
+            <strong>176 decks</strong> et <strong>700 cartes</strong>.
+          </p>
+          <p>
+            Cette volum&eacute;trie doit se lire honn&ecirc;tement : elle traduit une
+            <strong>industrialisation tr&egrave;s avanc&eacute;e de la structure</strong>, mais une partie importante du
+            contenu p&eacute;dagogique reste encore <strong>scaffold&eacute;e</strong>. Le point fort du projet est donc autant dans la
+            <strong>mod&eacute;lisation du syst&egrave;me d&rsquo;apprentissage</strong> que dans la r&eacute;daction
+            finale des contenus.
+          </p>
+
+          <div class="callout">
+            <h3>Important sur les 3 490 tests</h3>
+            <ul>
+              <li>Je ne parle pas ici d&rsquo;une banque g&eacute;n&eacute;r&eacute;e &agrave; la vol&eacute;e par LLM.</li>
+              <li>L&rsquo;objectif est au contraire d&rsquo;avoir un contenu relu, stabilis&eacute;, puis soumis &agrave; un <strong>b&ecirc;ta test public</strong>.</li>
+              <li>Chaque bloc doit ensuite passer par de vraies <strong>it&eacute;rations p&eacute;dagogiques</strong> avant d&rsquo;&ecirc;tre consid&eacute;r&eacute; comme finalis&eacute;.</li>
+            </ul>
+          </div>
+
+          <h2>Architecture technique</h2>
+          <p>
+            La version cible est organis&eacute;e en <strong>monorepo</strong> avec un front moderne
+            <strong>React 19 + TypeScript + Vite + Tailwind</strong> dans
+            <code>apps/frontend-new</code>, et un backend <strong>FastAPI + SQLAlchemy + PostgreSQL</strong> dans
+            <code>apps/backend-python</code>.
+          </p>
+          <p>
+            Le contenu reste &eacute;ditable en <strong>JSON</strong>, puis pens&eacute; pour &ecirc;tre
+            <strong>migr&eacute; vers une base relationnelle</strong>.
+          </p>
+
+          <div class="callout">
+            <h3>Ce que j&rsquo;ai d&eacute;j&agrave; cod&eacute;</h3>
+            <ul>
+              <li><strong>Front React</strong> : routes publiques et prot&eacute;g&eacute;es, landing, login, register, dashboard, cartes, parcours QCM, espace admin.</li>
+              <li><strong>Backend FastAPI</strong> : <code>/register</code>, <code>/token</code>, <code>/auth/google</code>, <code>/users/me</code>, <code>/courses</code>, <code>/tests/tree</code>, <code>/tests/{id}</code> et plusieurs routes admin.</li>
+              <li><strong>Mod&egrave;le de donn&eacute;es</strong> : users, user progress, courses, lessons, tests, questions, decks et cards.</li>
+              <li><strong>Admin UI</strong> : dashboard global, liste utilisateurs, d&eacute;tail utilisateur, gestion des QCM et gestion des decks de cartes.</li>
+            </ul>
+          </div>
+
+          <p>
+            J&rsquo;ai aussi gard&eacute; un <strong>front statique legacy</strong>, qui correspond &agrave; une &eacute;tape
+            pr&eacute;c&eacute;dente du produit : pages HTML/CSS/JS pour la landing, les tests, les cartes, les cours &agrave;
+            venir, le profil et le dashboard &eacute;l&egrave;ve.
+          </p>
+
+          <h2>Espace admin et analytique</h2>
+          <p>
+            C&ocirc;t&eacute; administration, le projet ne se limite pas &agrave; un simple CRUD de contenu. Le
+            dashboard admin expose d&eacute;j&agrave; une lecture <strong>pilotage produit</strong> :
+            nombre d&rsquo;utilisateurs, activit&eacute; 7/30 jours, volume de cours, volume de le&ccedil;ons, volume de
+            questions et r&eacute;partition du contenu par cat&eacute;gorie.
+          </p>
+          <p>
+            Les pages admin vont plus loin avec une <strong>liste utilisateurs</strong>, un
+            <strong>d&eacute;tail utilisateur</strong>, une <strong>gestion des QCM</strong> et une
+            <strong>gestion des decks / cartes</strong>. Cela donne au projet une vraie dimension
+            <strong>plateforme</strong> plut&ocirc;t que simple vitrine p&eacute;dagogique.
+          </p>
+
+          <div class="callout">
+            <h3>Ambition fonctionnelle document&eacute;e</h3>
+            <ul>
+              <li>Onboarding visiteur vers compte cr&eacute;&eacute;, avec import de la progression d&rsquo;usage anonyme.</li>
+              <li>Authentification email / mot de passe, reset, Google OAuth et profil enrichi.</li>
+              <li>Tableau de bord &eacute;l&egrave;ve avec priorit&eacute;s du jour, progression par th&egrave;me et reprise d&rsquo;activit&eacute;.</li>
+              <li>Sp&eacute;cification RGPD d&eacute;taill&eacute;e : consentements versionn&eacute;s, export de profil, suppression de compte, gestion du cycle de vie des donn&eacute;es.</li>
+            </ul>
+          </div>
+
+          <p>
+            La sp&eacute;cification backend est m&ecirc;me plus ambitieuse que l&rsquo;impl&eacute;mentation actuelle :
+            refresh tokens par device, versioning des consentements, politique de suppression / anonymisation et
+            endpoints d&rsquo;export.
+          </p>
+          <p>
+            Aujourd&rsquo;hui, le site reste un <strong>prototype</strong>. C&rsquo;est aussi pour cela que je ne le
+            pr&eacute;sente pas encore comme un produit fini. Je pr&eacute;f&egrave;re continuer &agrave; consolider le fond,
+            tester les usages et faire it&eacute;rer le contenu avant d&rsquo;en faire une version publique vraiment assum&eacute;e.
+          </p>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</body>
+
+</html>

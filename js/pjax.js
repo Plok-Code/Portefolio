@@ -9,10 +9,35 @@ let pjaxNavigationId = 0;
 export let initPageFeatures = () => { };
 export const setInitPageFeatures = (fn) => { initPageFeatures = fn; };
 
-export const replacePage = (nextDoc) => {
+export const replacePage = (nextDoc, newUrlHref) => {
     const currentPage = document.querySelector(".page");
     const nextPage = nextDoc.querySelector(".page");
     if (!currentPage || !nextPage) return false;
+
+    // Resolve relative paths globally based on the new injected content
+    // This allows nested PJAX (/pages/projet.html) to navigate back and forth securely.
+    // We rewrite src/href that belong to our domain as absolute paths from the root
+    if (newUrlHref) {
+        // We compute the true absolute URL of a resource relative to the *new* page,
+        // then back-calculate what that relative path should be from the *current* page's perspective.
+        const resolveRelative = (attr) => {
+            if (!attr || attr.startsWith('data:') || attr.startsWith('http') || attr.startsWith('#') || attr.startsWith('mailto:')) return attr;
+            // 1. Get the true absolute URL of the requested resource as if we were on the new page
+            const absoluteResourceUrl = new URL(attr, newUrlHref);
+            // 2. Set the element to that absolute path
+            return absoluteResourceUrl.pathname;
+        };
+
+        const elementsWithSrc = nextPage.querySelectorAll('[src]');
+        for (const el of elementsWithSrc) {
+            el.setAttribute('src', resolveRelative(el.getAttribute('src')));
+        }
+
+        const elementsWithHref = nextPage.querySelectorAll('[href]');
+        for (const el of elementsWithHref) {
+            el.setAttribute('href', resolveRelative(el.getAttribute('href')));
+        }
+    }
 
     nextPage.querySelector("[data-site-player]")?.remove();
 
@@ -47,7 +72,7 @@ export const pjaxLoad = async (url) => {
     if (navigationId !== pjaxNavigationId) return false;
 
     const nextDoc = new DOMParser().parseFromString(html, "text/html");
-    return replacePage(nextDoc);
+    return replacePage(nextDoc, url);
 };
 
 export const hardNavigate = (href) => {

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idris NAULLEAU-AURIAL - Apprendre avec la Science</title>
+  <script>
+    document.documentElement.classList.add('js');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/playlist.js" defer></script>
+  <script type="module" src="../js/main.js"></script>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">Idris NAULLEAU-AURIAL</div>
+      <nav aria-label="Navigation principale">
+        <a href="../index.html">Accueil</a>
+        <a href="../profil.html">Profil</a>
+        <a href="../projets.html" aria-current="page">Projets</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-actions" aria-label="Liens rapides">
+        <a class="btn secondary btn--sm btn--icon" href="https://www.linkedin.com/in/idris-naulleau-aurial-9278b711b/"
+          target="_blank" rel="noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+            <path d="M8 11v5"></path>
+            <path d="M8 8v.01"></path>
+            <path d="M12 16v-5"></path>
+            <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+        <div class="cv-downloads" aria-label="Téléchargements CV">
+          <details>
+            <summary class="btn secondary btn--sm">Mon CV</summary>
+            <div class="cv-downloads__links">
+              <a class="btn primary btn--sm" href="../assets/documents/Papier CV DE alternance.pdf" target="_blank"
+                rel="noreferrer">Version à imprimer</a>
+              <a class="btn primary btn--sm" href="../assets/documents/Mail CV DE alternance.pdf" target="_blank"
+                rel="noreferrer">Version numérique</a>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="breadcrumbs" aria-label="Fil d'Ariane">
+        <div class="breadcrumbs__trail">
+          <a href="../index.html">Accueil</a>
+          <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+          <a href="../projets.html">Projets</a>
+          <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+          <span aria-current="page">Apprendre avec la Science</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="card reveal reveal-on-load">
+        <p class="kicker">Projet</p>
+        <h1>Apprendre avec la Science - automatisation des r&eacute;visions</h1>
+        <div class="project-meta">
+          <span class="pill">Cat&eacute;gorie : Projets Data</span>
+          <span class="pill">Statut : termin&eacute;</span>
+        </div>
+        <p class="muted">
+          Objectif : transformer une recherche personnelle sur la m&eacute;morisation efficace en un outil capable de
+          planifier les r&eacute;visions, r&eacute;cup&eacute;rer les contenus du jour, et g&eacute;n&eacute;rer automatiquement un auto-test pertinent
+          diffus&eacute; sur Discord.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="https://github.com/Plok-Code/R-visions-WCS" target="_blank"
+            rel="noreferrer">Voir le GitHub</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="card reveal">
+          <div class="article-tags" aria-label="Technologies et briques du projet">
+            <span class="tag">Python</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Discord</span>
+            <span class="tag">Playwright</span>
+            <span class="tag">Beautiful Soup</span>
+            <span class="tag">LLM API</span>
+            <span class="tag">Webhook</span>
+            <span class="tag">Make / Integromat</span>
+          </div>
+
+          <h2>Gen&egrave;se</h2>
+          <p>
+            L'apprentissage est un sujet central pour moi. J'ai donc d&eacute;cid&eacute; de me former s&eacute;rieusement aux meilleures
+            techniques de m&eacute;morisation et d'&eacute;tudier la litt&eacute;rature scientifique sur le sujet. Cette recherche m'a
+            pouss&eacute; &agrave; comprendre concr&egrave;tement ce qui se passe lorsqu'on apprend : s&eacute;lection de l'information, m&eacute;moire de
+            travail, stockage en m&eacute;moire long terme, r&eacute;cup&eacute;ration, consolidation et courbe d'Ebbinghaus.
+          </p>
+          <p>
+            En pratique, cela m'a amen&eacute; &agrave; comparer les m&eacute;thodes d'apprentissage les plus efficaces, &agrave; distinguer les
+            faux bons conseils des approches vraiment solides, puis &agrave; concevoir un outil capable d'automatiser ce
+            travail de r&eacute;vision. Le premier r&eacute;sultat a pris la forme d'un prototype no-code construit avec Make /
+            Integromat, que j'ai pr&eacute;sent&eacute; dans la vid&eacute;o ci-dessous.
+          </p>
+
+          <h2>Recherches et prototype</h2>
+          <div class="project-video project-video--narrow">
+            <iframe src="https://www.youtube.com/embed/9VJu80a0QlY"
+              title="Presentation video - Apprendre avec la Science" loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
+          <p>
+            Cette premi&egrave;re version expose d&eacute;j&agrave; le coeur de la d&eacute;marche : s'appuyer sur les meilleures pratiques issues
+            de la recherche, utiliser la r&eacute;p&eacute;tition espac&eacute;e au bon moment, privil&eacute;gier l'auto-test plut&ocirc;t que la simple
+            relecture, et supprimer au maximum la friction op&eacute;rationnelle pour que r&eacute;viser devienne quelque chose de
+            faisable au quotidien.
+          </p>
+
+          <h2>Adaptation pour la Wild Code School</h2>
+          <p>
+            Plus tard, pendant mon cursus pour apprendre le m&eacute;tier de Data Analyst &agrave; la Wild Code School, j'ai
+            pr&eacute;sent&eacute; cet outil aux responsables de l'&eacute;cole et je leur ai propos&eacute; une adaptation sur mesure pour leurs
+            besoins. Ils m'ont fait confiance et m'ont laiss&eacute; carte blanche pour le mettre en place, y compris
+            l'acc&egrave;s &agrave; leur serveur Discord.
+          </p>
+
+          <h2>Pipeline automatis&eacute;</h2>
+          <p>
+            J'ai donc repris ce principe en construisant un tableau Excel centralisant tous les cours, avec calcul
+            automatis&eacute; des dates de r&eacute;vision optimales &agrave; partir de la courbe d'Ebbinghaus.
+          </p>
+
+          <div class="mini-timeline" aria-label="Pipeline du projet">
+            <span class="mini-timeline__step">Excel des cours</span>
+            <span class="mini-timeline__sep" aria-hidden="true">→</span>
+            <span class="mini-timeline__step">Calcul Ebbinghaus</span>
+            <span class="mini-timeline__sep" aria-hidden="true">→</span>
+            <span class="mini-timeline__step">Scraping</span>
+            <span class="mini-timeline__sep" aria-hidden="true">→</span>
+            <span class="mini-timeline__step">LLM</span>
+            <span class="mini-timeline__sep" aria-hidden="true">→</span>
+            <span class="mini-timeline__step">Webhook Discord</span>
+          </div>
+
+          <div class="callout">
+            <h3>Cha&icirc;ne de traitement</h3>
+            <ul>
+              <li>L'outil rep&egrave;re les cours &agrave; r&eacute;viser du jour &agrave; partir du planning calcul&eacute;.</li>
+              <li>Il r&eacute;cup&egrave;re les URLs des cours concern&eacute;s, puis scrape le contenu des pages, documents et sources externes avec Playwright et Beautiful Soup.</li>
+              <li>Le contenu agr&eacute;g&eacute; part ensuite dans un mod&egrave;le LLM configur&eacute; sur mesure pour produire un auto-test d'environ 20 minutes couvrant l'ensemble des notions &agrave; r&eacute;viser.</li>
+              <li>Le r&eacute;sultat final est envoy&eacute; par webhook dans un salon Discord d&eacute;di&eacute; aux promos Data Analyst de septembre 2025.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</body>
+
+</html>

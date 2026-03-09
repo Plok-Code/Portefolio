@@ -11,7 +11,7 @@ body {
     font-family: var(--font-sans);
     background-color: var(--bg);
     /* Chemin mis à jour pour ../assets au lieu de assets */
-    background-image: url('../assets/tokyo_bg.png');
+    background-image: url('../assets/images/tokyo_bg.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

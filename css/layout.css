@@ -18,7 +18,7 @@ header {
     top: 0;
     z-index: 30;
     background: rgba(14, 15, 20, 0.85);
-    background-image: url('../assets/dark_metal.png');
+    background-image: url('../assets/images/dark_metal.png');
     background-size: 200px;
     background-blend-mode: overlay;
     border-bottom: 1px solid var(--border-metal);

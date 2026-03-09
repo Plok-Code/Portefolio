@@ -25,7 +25,7 @@
     border: 0;
 }
 
-.js .reveal {
+.js .reveal[data-reveal-init="1"] {
     opacity: 0;
     transform: translateY(20px);
     filter: blur(10px);
@@ -34,7 +34,7 @@
     will-change: opacity, transform, filter;
 }
 
-.js .reveal.is-visible {
+.js .reveal[data-reveal-init="1"].is-visible {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
@@ -49,7 +49,7 @@
         display: none;
     }
 
-    .js .reveal {
+    .js .reveal[data-reveal-init="1"] {
         opacity: 1;
         transform: none;
         filter: none;

@@ -1,5 +1,5 @@
-const PBIX_HREF = "Equipe%20RAVI%20_%20TOYS%20and%20MODELS.pbix";
-const SOURCE_HREF = "assets/presentation/toys-models/presentation-toys-models.pdf";
+const PBIX_HREF = "../assets/documents/Equipe%20RAVI%20_%20TOYS%20and%20MODELS.pbix";
+const SOURCE_HREF = "../assets/presentation/toys-models/presentation-toys-models.pdf";
 const REPORT_CTA_SLIDE_INDEX = 20; // slide 21 (1-based)
 const REPORT_LINK_ZONE = {
     x: 0.58,
@@ -9,7 +9,7 @@ const REPORT_LINK_ZONE = {
 };
 const SLIDES = Array.from({ length: 23 }, (_, index) => {
     const page = String(index + 1).padStart(2, "0");
-    return `assets/presentation/toys-models/slides-rendered/slide-${page}.png`;
+    return `../assets/presentation/toys-models/slides-rendered/slide-${page}.png`;
 });
 
 const NAV_KEYS = new Set(["ArrowLeft", "ArrowRight", "PageUp", "PageDown", "Home", "End"]);

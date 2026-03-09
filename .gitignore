@@ -1,2 +1,7 @@
-config.js
-
+.claude/
+archives/
+external_projects/
+__pycache__/
+*.pyc
+Thumbs.db
+.DS_Store

@@ -21,6 +21,26 @@ export const ensureLightbox = () => {
     closeButton.setAttribute("aria-label", "Fermer");
     closeButton.textContent = "\u00d7";
 
+    const prevButton = document.createElement("button");
+    prevButton.type = "button";
+    prevButton.className = "lightbox__nav lightbox__nav--prev";
+    prevButton.setAttribute("aria-label", "Image precedente");
+    prevButton.innerHTML = `
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M15 5l-7 7 7 7"></path>
+        </svg>
+    `;
+
+    const nextButton = document.createElement("button");
+    nextButton.type = "button";
+    nextButton.className = "lightbox__nav lightbox__nav--next";
+    nextButton.setAttribute("aria-label", "Image suivante");
+    nextButton.innerHTML = `
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M9 5l7 7-7 7"></path>
+        </svg>
+    `;
+
     const image = document.createElement("img");
     image.className = "lightbox__img";
     image.alt = "";
@@ -30,30 +50,23 @@ export const ensureLightbox = () => {
     caption.className = "lightbox__caption";
     caption.hidden = true;
 
-    panel.append(closeButton, image, caption);
+    panel.append(closeButton, prevButton, nextButton, image, caption);
     overlay.appendChild(panel);
     document.body.appendChild(overlay);
 
     let restoreFocusEl = null;
+    let galleryItems = [];
+    let currentIndex = -1;
 
-    const close = () => {
-        if (!overlay.classList.contains("is-open")) return;
-        overlay.classList.remove("is-open");
-        document.body.classList.remove("is-lightbox-open");
-        image.src = "";
-        image.alt = "";
-        caption.hidden = true;
-        caption.textContent = "";
-
-        if (restoreFocusEl && typeof restoreFocusEl.focus === "function") restoreFocusEl.focus();
-        restoreFocusEl = null;
+    const syncNavState = () => {
+        const hasGallery = galleryItems.length > 1 && currentIndex >= 0;
+        prevButton.hidden = !hasGallery;
+        nextButton.hidden = !hasGallery;
     };
 
-    const open = (sourceImage) => {
-        const src = sourceImage.currentSrc || sourceImage.src;
+    const renderImage = (sourceImage) => {
+        const src = sourceImage?.currentSrc || sourceImage?.src;
         if (!src) return;
-
-        restoreFocusEl = document.activeElement;
 
         image.src = src;
         image.alt = sourceImage.alt || "";
@@ -66,13 +79,64 @@ export const ensureLightbox = () => {
             caption.hidden = true;
             caption.textContent = "";
         }
+    };
+
+    const showImageAt = (index) => {
+        if (!galleryItems.length) return;
+        currentIndex = (index + galleryItems.length) % galleryItems.length;
+        renderImage(galleryItems[currentIndex]);
+        syncNavState();
+    };
+
+    const close = () => {
+        if (!overlay.classList.contains("is-open")) return;
+        overlay.classList.remove("is-open");
+        document.body.classList.remove("is-lightbox-open");
+        image.src = "";
+        image.alt = "";
+        caption.hidden = true;
+        caption.textContent = "";
+        galleryItems = [];
+        currentIndex = -1;
+        syncNavState();
+
+        if (restoreFocusEl && typeof restoreFocusEl.focus === "function") restoreFocusEl.focus();
+        restoreFocusEl = null;
+    };
+
+    const getGalleryItems = (sourceImage) => {
+        const groupRoot = sourceImage.closest("[data-lightbox-gallery]") || sourceImage.closest(".project-showcase");
+        if (!groupRoot) return [sourceImage];
+
+        const items = Array.from(groupRoot.querySelectorAll("img[data-lightbox]")).filter((img) => img.src);
+        return items.length ? items : [sourceImage];
+    };
+
+    const open = (sourceImage) => {
+        galleryItems = getGalleryItems(sourceImage);
+        const startIndex = Math.max(0, galleryItems.indexOf(sourceImage));
+        if (!galleryItems[startIndex]) return;
+
+        restoreFocusEl = document.activeElement;
 
         document.body.classList.add("is-lightbox-open");
         overlay.classList.add("is-open");
+        showImageAt(startIndex);
         window.setTimeout(() => closeButton.focus(), 0);
     };
 
+    const showPrevious = () => showImageAt(currentIndex - 1);
+    const showNext = () => showImageAt(currentIndex + 1);
+
     closeButton.addEventListener("click", close);
+    prevButton.addEventListener("click", (event) => {
+        event.stopPropagation();
+        showPrevious();
+    });
+    nextButton.addEventListener("click", (event) => {
+        event.stopPropagation();
+        showNext();
+    });
 
     overlay.addEventListener("click", (event) => {
         if (event.target === overlay) close();
@@ -82,6 +146,18 @@ export const ensureLightbox = () => {
         if (event.key === "Escape") {
             event.preventDefault();
             close();
+            return;
+        }
+
+        if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            showPrevious();
+            return;
+        }
+
+        if (event.key === "ArrowRight") {
+            event.preventDefault();
+            showNext();
             return;
         }
 

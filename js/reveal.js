@@ -13,6 +13,7 @@ export const initReveal = () => {
     for (const element of revealElements) {
         if (element.dataset.revealDelayBound === "1") continue;
         element.dataset.revealDelayBound = "1";
+        element.dataset.revealInit = "1";
         const group = element.closest(".section") || element.closest("main") || document.body;
         const index = delayGroups.get(group) ?? 0;
         delayGroups.set(group, index + 1);
@@ -39,6 +40,7 @@ export const initRevealOnLoad = () => {
     if (!revealOnLoad.length) return;
     const baseDelay = prefersReducedMotion ? 0 : 70;
     revealOnLoad.forEach((element, index) => {
+        element.dataset.revealInit = "1";
         if (element.dataset.revealDelayBound !== "1") {
             element.dataset.revealDelayBound = "1";
             const staggerDelay = prefersReducedMotion ? 0 : Math.min(index, 6) * 90;
