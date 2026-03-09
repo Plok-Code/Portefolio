@@ -28,27 +28,32 @@ export const initProjectRail = () => {
         else if (typeof mobileMenuMedia.addListener === "function") mobileMenuMedia.addListener(syncNavMenu);
     }
 
-    const getScreenStatus = (screen) => {
-        const statusText = screen.querySelector(".project-meta .pill")?.textContent?.toLowerCase() ?? "";
-        return statusText.includes("en cours") ? "in-progress" : "done";
-    };
+    const getScreenGroup = (screen) => screen.dataset.navGroup || "other";
 
     const rawScreens = Array.from(rail.querySelectorAll("[data-project-screen]"));
     if (!rawScreens.length) return;
 
-    const statusRank = { done: 0, "in-progress": 1 };
+    const groupRank = {
+        data: 0,
+        "automation-backend": 1,
+        other: 2,
+    };
     const screens = rawScreens
-        .map((screen, index) => ({ screen, index, status: getScreenStatus(screen) }))
-        .sort((a, b) => (statusRank[a.status] - statusRank[b.status]) || (a.index - b.index))
+        .map((screen, index) => ({ screen, index, group: getScreenGroup(screen) }))
+        .sort((a, b) => (groupRank[a.group] - groupRank[b.group]) || (a.index - b.index))
         .map((entry) => entry.screen);
 
-    // Keep all finished projects at the top and non-finished at the bottom.
+    // Keep project groups together in the rail and nav.
     for (const screen of screens) rail.appendChild(screen);
 
     navList.innerHTML = "";
 
-    const getStatusLabel = (status) => (status === "in-progress" ? "Projets en cours" : "Projets termines");
-    let previousStatus = null;
+    const getGroupLabel = (group) => {
+        if (group === "data") return "Data / Analytics";
+        if (group === "automation-backend") return "Automation / Backend";
+        return "Autres projets";
+    };
+    let previousGroup = null;
 
     const navItems = screens.map((screen) => {
         const label =
@@ -56,29 +61,29 @@ export const initProjectRail = () => {
             screen.getAttribute("aria-label") ||
             screen.querySelector("h2, h3")?.textContent?.trim() ||
             "Bloc projet";
-        const status = getScreenStatus(screen);
+        const group = getScreenGroup(screen);
 
-        if (previousStatus && previousStatus !== status) {
+        if (previousGroup !== group) {
             const separator = document.createElement("div");
             separator.className = "project-nav-separator";
             separator.setAttribute("role", "separator");
-            separator.setAttribute("aria-label", `Separation: ${getStatusLabel(status)}`);
+            separator.setAttribute("aria-label", `Séparation: ${getGroupLabel(group)}`);
 
             const separatorLabel = document.createElement("span");
             separatorLabel.className = "project-nav-separator__label";
-            separatorLabel.textContent = getStatusLabel(status);
+            separatorLabel.textContent = getGroupLabel(group);
             separator.append(separatorLabel);
 
             navList.appendChild(separator);
         }
-        previousStatus = status;
+        previousGroup = group;
 
         const button = document.createElement("button");
         button.type = "button";
         button.className = "project-nav-item";
         button.dataset.target = screen.id;
         button.dataset.label = label;
-        button.dataset.status = status;
+        button.dataset.group = group;
         button.setAttribute("aria-label", label);
         button.setAttribute("aria-controls", screen.id);
 

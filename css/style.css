@@ -463,6 +463,20 @@
   margin: 20px 0;
 }
 
+.inline-preview-toggle {
+  margin: 20px 0;
+}
+
+.inline-preview-toggle > summary {
+  display: inline-flex;
+  list-style: none;
+  cursor: pointer;
+}
+
+.inline-preview-toggle > summary::-webkit-details-marker {
+  display: none;
+}
+
 .cv-preview img {
   display: block;
   width: 100%;
