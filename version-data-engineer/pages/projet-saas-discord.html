@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Upforge : SaaS B2B2C Discord pour créateurs de communautés — optimisation de l'engagement, UX solide et approche marché.">
+  <meta property="og:title" content="Upforge — SaaS Discord | Idris NAULLEAU-AURIAL">
+  <meta property="og:description" content="Produit SaaS Discord destiné aux marques et créateurs, avec mécanismes d'engagement et scaling communautaire.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="robots" content="index, follow">
+  <title>Idris NAULLEAU-AURIAL - Upforge</title>
+  <script>
+    document.documentElement.classList.add('js');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/playlist.js" defer></script>
+  <script type="module" src="../js/main.js"></script>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">Idris NAULLEAU-AURIAL</div>
+      <nav aria-label="Navigation principale">
+        <a href="../index.html">Accueil</a>
+        <a href="../profil.html">Profil</a>
+        <a href="../projets.html" aria-current="page">Projets</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-actions" aria-label="Liens rapides">
+        <a class="btn secondary btn--sm btn--icon" href="https://www.linkedin.com/in/idris-naulleau-aurial-9278b711b/"
+          target="_blank" rel="noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+            <path d="M8 11v5"></path>
+            <path d="M8 8v.01"></path>
+            <path d="M12 16v-5"></path>
+            <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+        <div class="cv-downloads" aria-label="T&eacute;l&eacute;chargements CV">
+          <details>
+            <summary class="btn secondary btn--sm">Mon CV</summary>
+            <div class="cv-downloads__links">
+              <a class="btn primary btn--sm" href="../assets/documents/Papier CV DE alternance.pdf" target="_blank"
+                rel="noreferrer">Version &agrave; imprimer</a>
+              <a class="btn primary btn--sm" href="../assets/documents/Mail CV DE alternance.pdf" target="_blank"
+                rel="noreferrer">Version num&eacute;rique</a>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="breadcrumbs" aria-label="Fil d’Ariane">
+        <div class="breadcrumbs__trail">
+          <a href="../index.html">Accueil</a>
+          <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+          <a href="../projets.html">Projets</a>
+          <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+          <span aria-current="page">Upforge</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="card reveal reveal-on-load">
+        <p class="kicker">Projet</p>
+        <h1>Upforge - suite SaaS d'engagement communautaire pour Discord</h1>
+        <div class="project-meta">
+          <span class="pill">Catégorie : Projets en cours</span>
+          <span class="pill">Statut : en cours</span>
+        </div>
+        <p class="muted">
+          Objectif : construire une suite d'engagement qui remplace la fragmentation multi-bots par un hub unique :
+          progression, économie, mini-jeux, dashboard admin et analytics, avec un modèle freemium pensé pour la
+          croissance réelle des serveurs Discord.
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="card reveal">
+          <div class="article-tags" aria-label="Technologies et briques du projet">
+            <span class="tag">Discord</span>
+            <span class="tag">SaaS B2B2C</span>
+            <span class="tag">Product Strategy</span>
+            <span class="tag">Freemium</span>
+            <span class="tag">OAuth2</span>
+            <span class="tag">Analytics</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Go-to-market</span>
+          </div>
+
+          <p class="muted">
+            Le projet est actuellement documenté en interne sous le nom <strong>Upforge</strong>, nom d'emprunt car la
+            marque n'est pas encore déposée.
+          </p>
+
+          <div class="project-showcase" data-lightbox-gallery="upforge" aria-label="Aper&ccedil;us Upforge">
+            <figure class="project-shot">
+              <img class="project-image project-image--contain" src="../assets/images/upforge-01.png"
+                alt="Vision Upforge : passer d'un empilement de bots Discord &agrave; une suite d'engagement unifi&eacute;e"
+                loading="lazy" data-lightbox>
+            </figure>
+            <figure class="project-shot">
+              <img class="project-image project-image--contain" src="../assets/images/upforge-02.png"
+                alt="Vue conceptuelle de la couche data et analytics multi-tenant d'Upforge" loading="lazy"
+                data-lightbox>
+            </figure>
+            <figure class="project-shot">
+              <img class="project-image project-image--contain" src="../assets/images/upforge-03-fixed.png"
+                alt="Command center Upforge pour onboarding, pilotage produit et op&eacute;rations SaaS"
+                loading="lazy" data-lightbox>
+            </figure>
+          </div>
+
+          <h2>Constat de marché</h2>
+          <p>
+            Le marché des bots Discord impose encore un choix peu satisfaisant. Soit un admin empile plusieurs bots
+            spécialisés pour couvrir l'XP, l'économie, les mini-jeux, les rôles et les données, au prix d'une UX
+            éclatée et d'une maintenance pénible. Soit il adopte un généraliste à la MEE6, Dyno ou Carl-bot, avec une
+            logique de paywalls, une innovation souvent superficielle et une profondeur produit limitée sur
+            l'engagement.
+          </p>
+          <p>
+            Toute la thèse Upforge tient dans cette douleur : la <strong>taxe de fragmentation</strong>. Elle coûte du
+            temps, de la charge mentale et de la cohérence à des admins qui veulent simplement garder une communauté
+            active sans se transformer en techniciens.
+          </p>
+
+          <h2>Positionnement produit</h2>
+          <p>
+            Upforge ne cherche pas à être un bot de plus. Le projet est pensé comme un
+            <strong>spécialiste intégré de l'engagement communautaire</strong> : une suite cohérente qui relie
+            progression, économie, mini-jeux, trophées et analytics admin dans une même expérience, avec un setup
+            court et une UX lisible pour l'admin.
+          </p>
+          <p>
+            Le cadrage actuel vise d'abord les admins de serveurs Discord entre <strong>50 et 1000 membres</strong>.
+            Le gratuit doit couvrir la boucle vitale d'engagement ; le premium vend surtout le contrôle, l'échelle et
+            la lisibilité opérationnelle via les analytics admin.
+          </p>
+
+          <h2>Lecture AI engineer</h2>
+          <p>
+            Pour un poste d'AI engineer, l'intérêt du projet réside dans le volume et la richesse des signaux
+            comportementaux qu'il génère. Chaque message, événement vocal, gain d'XP, transaction d'économie
+            ou consultation du leaderboard constitue une donnée d'engagement exploitable &mdash; potentiellement
+            en entrée de modèles de recommandation, de prédiction de churn ou de personnalisation.
+          </p>
+          <p>
+            Upforge oblige à penser un modèle <strong>multi-tenant par serveur</strong>, capable d'alimenter
+            à la fois les usages temps réel du bot et une couche analytique exploitable par des pipelines ML :
+            activation J1/J7, rétention, progression, engagement par canal. Le vrai enjeu est de décider ce
+            qu'on conserve en brut pour l'entraînement, ce qu'on pré-agrège pour l'inférence, et comment
+            on industrialise ça à mesure que le parc de serveurs augmente.
+          </p>
+
+          <div class="callout">
+            <h3>Architecture data visée</h3>
+            <ul>
+              <li>Ingestion d'événements Discord en continu, avec séparation claire entre signaux produit, signaux métier et métriques techniques.</li>
+              <li>Stockage multi-tenant par serveur, pour isoler configuration, données d'usage, historique de progression et analytics.</li>
+              <li>Tables d'agrégats et lectures rapides pour servir le leaderboard, les commandes temps réel et le dashboard admin.</li>
+              <li>Instrumentation produit pour suivre activation, rétention, conversion, coût infra par serveur et usage des fonctionnalités premium.</li>
+            </ul>
+          </div>
+
+          <p>
+            C'est aussi un projet de <strong>scalabilité</strong>. La roadmap assume explicitement une montée en charge
+            avec <strong>sharding</strong>, <strong>cache</strong>, <strong>migration gateway</strong> et
+            <strong>observabilité</strong>. À ce stade, on ne parle plus seulement d'un bot Discord, mais d'une
+            architecture distribuée où la fiabilité des flux, l'idempotence, la gestion des recalculs et la cohérence
+            entre temps réel et analytique deviennent centrales.
+          </p>
+
+          <h2>Périmètre déjà cadré</h2>
+          <div class="callout">
+            <h3>V1 fondations</h3>
+            <ul>
+              <li>Système d'XP texte et vocal, avec cooldowns et ratios configurables.</li>
+              <li>Récompenses de rôle automatiques et illimitées, pensées comme une vraie arme d'acquisition.</li>
+              <li>Socle économie avec commandes de base, leaderboard web et contrôle de confidentialité.</li>
+              <li>Dashboard admin via OAuth2, déploiement Docker et exigence d'uptime supérieure à 99,5 %.</li>
+            </ul>
+          </div>
+
+          <p>
+            Le modèle économique est lui aussi déjà arbitré dans son principe : un <strong>free utile</strong> qui
+            couvre la boucle vitale d'engagement, puis un <strong>tier pro</strong> centré sur les analytics, les
+            exports, l'alerting et les fonctions admin de scale/ops. Le produit cherche donc à gagner sur la valeur et
+            la lisibilité, pas sur le verrouillage artificiel.
+          </p>
+
+          <h2>Exécution réelle du projet</h2>
+          <p>
+            Le projet est piloté comme un produit et non comme un simple concept. La documentation est découpée entre
+            PMO, stratégie, produit, marketing, légal et procédures, et le Trello montre une continuité réelle entre
+            cadrage business, architecture technique et exécution opérationnelle.
+          </p>
+          <div class="callout">
+            <h3>État du chantier</h3>
+            <ul>
+              <li>Déjà terminé : architecture du projet, VPS et sécurisation initiale.</li>
+              <li>En cours : entretiens marché, cadrage stratégique, schéma BDD, reverse proxy, SSL et infra.</li>
+              <li>À vérifier : pipeline CI/CD et Docker.</li>
+              <li>Backlog prioritaire : bot core, système XP, récompenses de rôle, OAuth2, dashboard admin, leaderboard public et design UI.</li>
+            </ul>
+          </div>
+
+          <h2>Roadmap et lancement</h2>
+          <p>
+            La feuille de route suit une logique SaaS lisible : V1 stable et sécurisée, bêta pour valider la boucle de
+            valeur, lancement public, monétisation, puis phase de scale avec sharding, cache, optimisation CPU et
+            observabilité.
+          </p>
+          <div class="mini-timeline" aria-label="Roadmap Upforge">
+            <span class="mini-timeline__step">V1 Fondations</span>
+            <span class="mini-timeline__sep" aria-hidden="true">→</span>
+            <span class="mini-timeline__step">V2 Bêta &amp; Économie</span>
+            <span class="mini-timeline__sep" aria-hidden="true">→</span>
+            <span class="mini-timeline__step">V3 Lancement</span>
+            <span class="mini-timeline__sep" aria-hidden="true">→</span>
+            <span class="mini-timeline__step">V4 Monétisation</span>
+            <span class="mini-timeline__sep" aria-hidden="true">→</span>
+            <span class="mini-timeline__step">V5 Scalabilité</span>
+          </div>
+          <p>
+            Le go-to-market est, lui aussi, documenté : bêta privée sur 10 à 20 serveurs, serveur communautaire
+            <strong>Upforge HQ</strong> comme moteur d'acquisition, rétention et feedback, puis lancement public avec
+            Top.gg, contenu court et boucle communautaire visible.
+          </p>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</body>
+
+</html>

@@ -34,9 +34,10 @@ export const initProjectRail = () => {
     if (!rawScreens.length) return;
 
     const groupRank = {
-        data: 0,
-        "automation-backend": 1,
-        other: 2,
+        "automation-backend": 0,
+        ia: 1,
+        data: 2,
+        other: 3,
     };
     const screens = rawScreens
         .map((screen, index) => ({ screen, index, group: getScreenGroup(screen) }))
@@ -49,8 +50,9 @@ export const initProjectRail = () => {
     navList.innerHTML = "";
 
     const getGroupLabel = (group) => {
-        if (group === "data") return "Data / Analytics";
         if (group === "automation-backend") return "Automation / Backend";
+        if (group === "ia") return "IA";
+        if (group === "data") return "Data / Analytics";
         return "Autres projets";
     };
     let previousGroup = null;
@@ -202,6 +204,7 @@ export const initProjectRail = () => {
     };
 
     rail.addEventListener("keydown", onKeyDown);
+
     projectRailCleanup = () => {
         rail.removeEventListener("keydown", onKeyDown);
         if (navMenu && mobileMenuMedia) {
