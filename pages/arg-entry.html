@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>???</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      color: #e2e4e9;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(255,255,255,0.03) 2px,
+        rgba(255,255,255,0.03) 4px
+      );
+      pointer-events: none;
+      z-index: 10;
+    }
+    .container {
+      text-align: center;
+      max-width: 480px;
+      padding: 24px;
+    }
+    .narrative {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+      opacity: 0.85;
+    }
+    .password-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .password-group input {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #e2e4e9;
+      padding: 10px 16px;
+      font-size: 1rem;
+      text-align: center;
+      border-radius: 4px;
+      outline: none;
+      width: 220px;
+    }
+    .password-group input:focus {
+      border-color: rgba(56, 189, 248, 0.5);
+    }
+    .feedback {
+      font-size: 0.85rem;
+      min-height: 1.2em;
+      color: #f87171;
+    }
+    .back-link {
+      margin-top: 48px;
+      font-size: 0.85rem;
+      opacity: 0.4;
+    }
+    .back-link a {
+      color: #e2e4e9;
+      text-decoration: none;
+    }
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <p class="narrative">Je ne me rappelle plus pourquoi j'ai consult&eacute; ce portfolio. Mais je suis &agrave; pr&eacute;sent bloqu&eacute;.</p>
+
+    <div class="password-group">
+      <input type="text" id="arg-password" placeholder="..." autocomplete="off" spellcheck="false">
+      <p class="feedback" id="arg-feedback"></p>
+    </div>
+
+    <div class="back-link">
+      <a href="projet-jeu-arg-discord.html">&larr; Retour</a>
+    </div>
+  </div>
+
+  <!-- La cle n'est pas ici. Cherche dans la source de la d'ou tu viens. -->
+  <script>
+    (() => {
+      const key = [0x4a,0x61,0x63,0x71,0x75,0x65,0x73].map(c => String.fromCharCode(c)).join("");
+      const input = document.getElementById("arg-password");
+      const feedback = document.getElementById("arg-feedback");
+      input.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter") return;
+        if (input.value.trim() === key) {
+          feedback.style.color = "#34d399";
+          feedback.textContent = "...";
+        } else {
+          feedback.style.color = "#f87171";
+          feedback.textContent = "Ce n'est pas le bon mot.";
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>

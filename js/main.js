@@ -5,6 +5,8 @@ import { ensureLightbox } from './lightbox.js';
 import { initProjectRail } from './project-rail.js';
 import { initCardDecks } from './decks.js';
 import { initBriefModals } from './brief-modal.js';
+import { initTrackFx } from './track-fx.js';
+import { initArgGallery } from './arg-gallery.js';
 import { initContactForms } from './contact.js';
 import { initPresentationViewers } from './presentation-viewer.js';
 import { initAudioPlayer, setSitePlayerVisible } from './audio-player.js';
@@ -24,6 +26,7 @@ const initPageFeatures = () => {
     initContactForms();
     initPresentationViewers();
     initAudioPlayer();
+    initArgGallery();
     refreshZeroG(); // re-apply zero-g to new DOM after pjax navigation
 };
 
@@ -33,6 +36,7 @@ setInitPageFeatures(initPageFeatures);
 const initGlobals = () => {
     initSparks();
     initZeroGravity();
+    initTrackFx();
     setupPjax();
 
     document.addEventListener("click", (event) => {
@@ -59,6 +63,11 @@ const initGlobals = () => {
         }
     });
 };
+
+// View Transitions re-init (Astro / Navigation API)
+document.addEventListener("astro:after-swap", () => {
+    initPageFeatures();
+});
 
 // Kickoff
 initPageFeatures();

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /assets/documents/
 
-# Sitemap: https://YOUR-DOMAIN/sitemap.xml
+Sitemap: https://plok-code.github.io/sitemap.xml

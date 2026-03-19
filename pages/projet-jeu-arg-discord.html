@@ -20,6 +20,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <style>[data-arg-slot]{cursor:grab;}[data-arg-slot]:active{cursor:grabbing;}</style>
   <script src="../js/playlist.js" defer></script>
   <script type="module" src="../js/main.js"></script>
 </head>
@@ -114,24 +115,27 @@
             d&rsquo;&eacute;nigmes coh&eacute;rentes avec cette direction.
           </p>
 
+          <!-- Tu cherches quelque chose ? Les reponses sont parfois a l'envers de ce qu'on croit. -->
+          <!-- data-password: c2V1cWNhSg== -->
           <div class="project-showcase" data-lightbox-gallery="projet-jacques"
-            aria-label="Aper&ccedil;us du projet Jacques">
-            <figure class="project-shot">
+            aria-label="Aper&ccedil;us du projet Jacques" data-arg-gallery>
+            <figure class="project-shot" data-arg-slot="0" draggable="true">
               <img class="project-image project-image--contain" src="../assets/images/arg1.png"
                 alt="Salon sombre utilis&eacute; comme visuel d'ambiance pour le projet Jacques"
                 loading="lazy" data-lightbox>
             </figure>
-            <figure class="project-shot">
+            <figure class="project-shot" data-arg-slot="1" draggable="true">
               <img class="project-image project-image--contain" src="../assets/images/arg2.png"
                 alt="Sc&egrave;ne de voiture angoissante utilis&eacute;e comme visuel du projet Jacques"
                 loading="lazy" data-lightbox>
             </figure>
-            <figure class="project-shot">
+            <figure class="project-shot" data-arg-slot="2" draggable="true">
               <img class="project-image project-image--contain" src="../assets/images/arg3.png"
                 alt="Visuel horrifique d'une menace dans une chambre reli&eacute;e &agrave; l'univers du projet Jacques"
                 loading="lazy" data-lightbox>
             </figure>
           </div>
+          <p class="muted" style="text-align:center;margin-top:12px;font-style:italic;opacity:0.5;">Si tu aimes les ARGs, peut-&ecirc;tre peux-tu replacer ces images dans le bon ordre.</p>
 
           <h2>Intention</h2>
           <p>

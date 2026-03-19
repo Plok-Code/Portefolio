@@ -4,7 +4,7 @@
 @import url('components.css');
 @import url('presentation-viewer.css');
 @import url('utilities.css');
-
+@import url('theme-fantasy.css');
 
 
 
@@ -667,7 +667,7 @@ body.has-site-player .page {
   font-family: var(--font-sans);
   font-size: 14px;
   text-align: center;
-  animation: player-unlock-pop 600ms var(--ease) both;
+  animation: player-unlock-pop 200ms var(--ease) both;
 }
 
 .player-unlock-toast__title {
@@ -693,7 +693,7 @@ body.has-site-player .page {
 }
 
 .player-unlock-toast.is-out .player-unlock-toast__inner {
-  animation: player-unlock-out 420ms var(--ease) both;
+  animation: player-unlock-out 140ms var(--ease) both;
 }
 
 .unlock-fireworks {
@@ -706,7 +706,7 @@ body.has-site-player .page {
     radial-gradient(circle at 30% 20%, rgba(var(--accent-cool-rgb), 0.10), transparent 45%),
     rgba(0, 0, 0, 0.22);
   opacity: 1;
-  transition: opacity 420ms var(--ease);
+  transition: opacity 140ms var(--ease);
 }
 
 .unlock-fireworks.is-out {
@@ -1164,25 +1164,39 @@ body.has-site-player .page {
   }
 }
 
-/* ── Zero-gravity Easter egg (Pluto track 9 s → 28 s) ── */
+/* ── Zero-gravity Easter egg (Pluto track 8.5 s → 27.75 s) ── */
 .zg-target {
   will-change: transform;
 }
 
 body.zero-g .zg-target {
-  animation: zg-float 2.2s cubic-bezier(0.22, 0.68, 0, 1.71) var(--zg-delay, 0s) both !important;
+  animation:
+    zg-rise 2s cubic-bezier(0.22, 0.68, 0, 1.71) var(--zg-delay, 0s) both,
+    zg-drift var(--zg-drift-dur, 5s) ease-in-out infinite alternate !important;
 }
 
 body.zero-g-settle .zg-target {
   animation: zg-slam 0.9s cubic-bezier(0.22, 0, 0.36, 1) both !important;
 }
 
-@keyframes zg-float {
+@keyframes zg-rise {
   0% {
     transform: translateY(0) translateX(0) rotate(0deg);
   }
   100% {
     transform: translateY(var(--zg-y, -40px)) translateX(var(--zg-x, 0px)) rotate(var(--zg-r, 0deg));
+  }
+}
+
+@keyframes zg-drift {
+  0% {
+    transform: translateY(var(--zg-y, -40px)) translateX(var(--zg-x, 0px)) rotate(var(--zg-r, 0deg));
+  }
+  100% {
+    transform:
+      translateY(calc(var(--zg-y, -40px) + var(--zg-drift-y, 4px)))
+      translateX(calc(var(--zg-x, 0px) + var(--zg-drift-x, 3px)))
+      rotate(calc(var(--zg-r, 0deg) + var(--zg-drift-r, 1deg)));
   }
 }
 

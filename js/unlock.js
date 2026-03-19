@@ -1,5 +1,8 @@
 import { prefersReducedMotion } from './config.js';
 
+const UNLOCK_SPEED_MULTIPLIER = 3;
+const scaleUnlockDuration = (durationMs) => Math.max(1, durationMs / UNLOCK_SPEED_MULTIPLIER);
+
 export const showPlayerUnlockFireworks = ({ text = "Let Play Music", durationMs = 5200 } = {}) => {
     const existing = document.querySelector("[data-unlock-fireworks]");
     if (existing) existing.remove();
@@ -81,8 +84,8 @@ export const showPlayerUnlockFireworks = ({ text = "Let Play Music", durationMs 
         ctx.fillText(text, width / 2, height * 0.34);
 
         wrapper.classList.add("is-out");
-        window.setTimeout(() => resolveDone?.(), 420);
-        window.setTimeout(removeWrapper, 900);
+        window.setTimeout(() => resolveDone?.(), scaleUnlockDuration(420));
+        window.setTimeout(removeWrapper, scaleUnlockDuration(900));
         return done;
     }
 
@@ -306,21 +309,21 @@ export const showPlayerUnlockFireworks = ({ text = "Let Play Music", durationMs 
 
         wrapper.classList.add("is-out");
         wrapper.addEventListener("transitionend", removeWrapper, { once: true });
-        window.setTimeout(removeWrapper, 900);
+        window.setTimeout(removeWrapper, scaleUnlockDuration(900));
     };
 
     window.addEventListener("resize", setCanvasSize, { passive: true });
 
     const start = performance.now();
     let last = start;
-    let nextRocketAt = start + 50;
+    let nextRocketAt = start + scaleUnlockDuration(50);
     let textSpawned = false;
     let textSpawnedOk = false;
-    const textSpawnAt = start + 560;
-    const endAt = start + Math.max(1200, Number(durationMs) || 5200);
+    const textSpawnAt = start + scaleUnlockDuration(560);
+    const endAt = start + scaleUnlockDuration(Math.max(1200, Number(durationMs) || 5200));
 
     const frame = (now) => {
-        const dt = Math.min((now - last) / 16.666, 2);
+        const dt = Math.min((now - last) / 16.666, 2) * UNLOCK_SPEED_MULTIPLIER;
         last = now;
 
         ctx.globalCompositeOperation = "source-over";
@@ -331,7 +334,7 @@ export const showPlayerUnlockFireworks = ({ text = "Let Play Music", durationMs 
 
         if (now >= nextRocketAt && now < endAt - 400) {
             spawnRocket();
-            nextRocketAt = now + 220 + Math.random() * 240;
+            nextRocketAt = now + scaleUnlockDuration(220 + Math.random() * 240);
         }
 
         if (!textSpawned && now >= textSpawnAt) {
@@ -413,7 +416,7 @@ export const showPlayerUnlockToast = ({ until = null } = {}) => {
 
         toast.classList.add("is-out");
         toast.addEventListener("animationend", () => toast.remove(), { once: true });
-        window.setTimeout(() => toast.remove(), 800);
+        window.setTimeout(() => toast.remove(), scaleUnlockDuration(800));
     };
 
     if (until && typeof until.then === "function") {
@@ -421,5 +424,5 @@ export const showPlayerUnlockToast = ({ until = null } = {}) => {
         return;
     }
 
-    window.setTimeout(exitToast, prefersReducedMotion ? 1200 : 2600);
+    window.setTimeout(exitToast, scaleUnlockDuration(prefersReducedMotion ? 1200 : 2600));
 };

@@ -1,0 +1,282 @@
+/* ═══════════════════════════════════════════════════════════
+   Fantasy Theme — New Horizon track
+   Applied via body.theme-fantasy by track-fx.js
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── CSS variable overrides ─────────────────────────────── */
+body.theme-fantasy {
+  --bg: #060D18;
+  --surface: #0B1628;
+  --surface-glass: rgba(11, 22, 40, 0.6);
+  --border-glass: rgba(107, 163, 199, 0.15);
+  --border-metal: rgba(107, 163, 199, 0.12);
+  --border: rgba(107, 163, 199, 0.1);
+  --text: #D8E4EF;
+  --text-soft: rgba(216, 228, 239, 0.86);
+  --muted: #7A9BB5;
+  --accent-cool: #6BA3C7;
+  --accent-cool-rgb: 107, 163, 199;
+  --accent-warm: #D4A44C;
+
+  background-image: url('../assets/images/15398-art_fantastique-la_science_fantasy-obscurite-ecosysteme-foret-2560x1440.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  transition: background-image 3.5s ease, background-color 3.5s ease,
+              color 3.5s ease;
+}
+
+/* ── Vignette dark edges ────────────────────────────────── */
+body.theme-fantasy::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(6, 13, 24, 0.85) 100%);
+  pointer-events: none;
+  z-index: 0;
+  animation: fantasy-vignette-in 4s ease both;
+}
+
+@keyframes fantasy-vignette-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Animated mist at bottom ────────────────────────────── */
+body.theme-fantasy::before {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: -10%;
+  width: 120%;
+  height: 30vh;
+  background: linear-gradient(to top, rgba(6, 13, 24, 0.6), transparent);
+  pointer-events: none;
+  z-index: 0;
+  animation: fantasy-mist-drift 12s ease-in-out infinite alternate;
+  opacity: 0.7;
+}
+
+@keyframes fantasy-mist-drift {
+  0%   { transform: translateX(-3%) scaleY(1); }
+  50%  { transform: translateX(2%) scaleY(1.15); }
+  100% { transform: translateX(-1%) scaleY(0.95); }
+}
+
+/* ── Fireflies ──────────────────────────────────────────── */
+.fantasy-fireflies {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  animation: fantasy-fireflies-in 6s ease 2s both;
+}
+
+@keyframes fantasy-fireflies-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fantasy-firefly {
+  position: absolute;
+  left: var(--ff-x, 50%);
+  top: var(--ff-y, 50%);
+  width: var(--ff-size, 4px);
+  height: var(--ff-size, 4px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 164, 76, 0.9), rgba(212, 164, 76, 0) 70%);
+  box-shadow: 0 0 var(--ff-glow, 8px) rgba(212, 164, 76, 0.5);
+  animation:
+    ff-float var(--ff-dur, 8s) ease-in-out infinite alternate,
+    ff-pulse var(--ff-pulse, 3s) ease-in-out infinite;
+}
+
+@keyframes ff-float {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(var(--ff-dx1, 20px), var(--ff-dy1, -15px)); }
+  50%  { transform: translate(var(--ff-dx2, -30px), var(--ff-dy2, -25px)); }
+  75%  { transform: translate(var(--ff-dx3, 15px), var(--ff-dy3, 10px)); }
+  100% { transform: translate(var(--ff-dx4, -20px), var(--ff-dy4, -20px)); }
+}
+
+@keyframes ff-pulse {
+  0%, 100% { opacity: 0.3; }
+  50%      { opacity: 1; }
+}
+
+/* ── Light rays ─────────────────────────────────────────── */
+.fantasy-rays {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  animation: fantasy-rays-in 5s ease 1s both;
+}
+
+@keyframes fantasy-rays-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fantasy-ray {
+  position: absolute;
+  top: -10%;
+  left: var(--ray-x, 50%);
+  width: var(--ray-w, 120px);
+  height: 120%;
+  background: linear-gradient(
+    to bottom,
+    rgba(107, 163, 199, var(--ray-opacity, 0.04)),
+    transparent 80%
+  );
+  transform-origin: top center;
+  transform: rotate(var(--ray-angle, 15deg));
+  animation: ray-sway var(--ray-dur, 12s) ease-in-out infinite alternate;
+}
+
+@keyframes ray-sway {
+  0%   { transform: rotate(var(--ray-angle, 15deg)) translateX(0); }
+  100% { transform: rotate(var(--ray-angle, 15deg)) translateX(var(--ray-sway, 20px)); }
+}
+
+/* ── H1 glowing text with pulse ─────────────────────────── */
+body.theme-fantasy h1 {
+  text-shadow:
+    0 0 20px rgba(107, 163, 199, 0.4),
+    0 0 40px rgba(107, 163, 199, 0.2),
+    0 0 80px rgba(107, 163, 199, 0.1);
+  animation: fantasy-h1-pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes fantasy-h1-pulse {
+  0%   { text-shadow: 0 0 20px rgba(107, 163, 199, 0.4), 0 0 40px rgba(107, 163, 199, 0.2), 0 0 80px rgba(107, 163, 199, 0.1); }
+  100% { text-shadow: 0 0 30px rgba(107, 163, 199, 0.6), 0 0 60px rgba(107, 163, 199, 0.3), 0 0 100px rgba(107, 163, 199, 0.15); }
+}
+
+/* ── H2 subtle blue glow ────────────────────────────────── */
+body.theme-fantasy h2 {
+  text-shadow: 0 0 12px rgba(107, 163, 199, 0.25), 0 0 30px rgba(107, 163, 199, 0.1);
+}
+
+/* ── Cards breathing border glow ────────────────────────── */
+body.theme-fantasy .card {
+  border-color: rgba(107, 163, 199, 0.15);
+  box-shadow: 0 0 15px rgba(107, 163, 199, 0.05), inset 0 0 15px rgba(107, 163, 199, 0.03);
+  animation: fantasy-card-breathe 5s ease-in-out infinite alternate;
+}
+
+@keyframes fantasy-card-breathe {
+  0%   { box-shadow: 0 0 15px rgba(107, 163, 199, 0.05), inset 0 0 15px rgba(107, 163, 199, 0.03); }
+  100% { box-shadow: 0 0 25px rgba(107, 163, 199, 0.1), inset 0 0 20px rgba(107, 163, 199, 0.05); }
+}
+
+/* ── Primary buttons — golden lantern glow ──────────────── */
+body.theme-fantasy .btn--primary {
+  background: linear-gradient(135deg, #D4A44C, #B8883A);
+  border-color: rgba(212, 164, 76, 0.4);
+  box-shadow: 0 0 20px rgba(212, 164, 76, 0.25), 0 0 40px rgba(212, 164, 76, 0.1);
+  color: #060D18;
+}
+
+body.theme-fantasy .btn--primary:hover {
+  box-shadow: 0 0 30px rgba(212, 164, 76, 0.4), 0 0 60px rgba(212, 164, 76, 0.15);
+}
+
+/* ── Secondary buttons — mystical border ────────────────── */
+body.theme-fantasy .btn--secondary {
+  border-color: rgba(107, 163, 199, 0.3);
+  box-shadow: 0 0 10px rgba(107, 163, 199, 0.08);
+}
+
+body.theme-fantasy .btn--secondary:hover {
+  border-color: rgba(107, 163, 199, 0.5);
+  box-shadow: 0 0 18px rgba(107, 163, 199, 0.15);
+}
+
+/* ── Golden kicker with text-shadow ─────────────────────── */
+body.theme-fantasy .kicker {
+  color: #D4A44C;
+  text-shadow: 0 0 8px rgba(212, 164, 76, 0.35);
+}
+
+/* ── Pills — forest tint ────────────────────────────────── */
+body.theme-fantasy .pill {
+  background: rgba(11, 22, 40, 0.6);
+  border-color: rgba(107, 163, 199, 0.15);
+  color: #7A9BB5;
+}
+
+/* ── Tags — mystical blue ───────────────────────────────── */
+body.theme-fantasy .tag {
+  background: rgba(107, 163, 199, 0.1);
+  border-color: rgba(107, 163, 199, 0.2);
+  color: #6BA3C7;
+}
+
+/* ── Header — deep forest glass ─────────────────────────── */
+body.theme-fantasy header {
+  background: rgba(6, 13, 24, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: rgba(107, 163, 199, 0.08);
+}
+
+/* ── Links — golden hover ───────────────────────────────── */
+body.theme-fantasy a:hover {
+  color: #D4A44C;
+}
+
+/* ── Player themed ──────────────────────────────────────── */
+body.theme-fantasy .site-player {
+  background: rgba(6, 13, 24, 0.9);
+  border-top-color: rgba(212, 164, 76, 0.15);
+}
+
+body.theme-fantasy .site-player .player-title__text {
+  color: #D4A44C;
+}
+
+body.theme-fantasy .site-player .player-btn:hover {
+  color: #D4A44C;
+}
+
+body.theme-fantasy .site-player input[type="range"]::-webkit-slider-thumb {
+  background: #D4A44C;
+}
+
+body.theme-fantasy .site-player input[type="range"]::-moz-range-thumb {
+  background: #D4A44C;
+}
+
+/* ── Callout — mystical styling ─────────────────────────── */
+body.theme-fantasy .callout {
+  background: rgba(11, 22, 40, 0.5);
+  border-color: rgba(107, 163, 199, 0.15);
+  box-shadow: 0 0 20px rgba(107, 163, 199, 0.05);
+}
+
+/* ── Scrollbar themed ───────────────────────────────────── */
+body.theme-fantasy::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.theme-fantasy::-webkit-scrollbar-track {
+  background: #060D18;
+}
+
+body.theme-fantasy::-webkit-scrollbar-thumb {
+  background: rgba(107, 163, 199, 0.2);
+  border-radius: 4px;
+}
+
+body.theme-fantasy::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 163, 199, 0.35);
+}
+
+/* ── Smooth body transitions ────────────────────────────── */
+body {
+  transition: background-color 3.5s ease, background-image 3.5s ease, color 3.5s ease;
+}
